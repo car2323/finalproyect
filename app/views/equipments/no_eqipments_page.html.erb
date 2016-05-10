@@ -1,0 +1,36 @@
+
+
+
+
+
+<div class="container">
+
+	<div class="row">
+      <%=image_tag("logotop", class: "imgtop")%>
+   </div> <!--close div cintillo-->
+    <div class="row">
+       <h1>You have no equipments<h1>
+       <div class="col-sm-3 homelink">
+          <a class="logout" href="/">home</a>
+       </div><!-- 1er column--> 
+       
+       <div class="col-sm-12 cornerrigth">
+          foto
+          <%if user_signed_in?%>                      
+             <class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <%end%>
+          <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
+       </div><!-- 3er column--> 
+       <div class="row addequip">
+         <button class="btn js-new_equip">add equipment</button>
+       </div><!-- 2da row close-->
+
+
+    </div>
+    <div class="row">
+    	 <%=image_tag("fuel", class: "logocenterfuel")%>
+    </div>
+    <div class="row">
+        <%=image_tag("logofooter", class: "imgfooter")%>
+    </div><!--Close footer-->
+</div> <!--Close container-->

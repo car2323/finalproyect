@@ -1,0 +1,178 @@
+<div class="container">
+   <div class="row">
+      <%=image_tag("logotop", class: "imgtop")%>
+   </div> <!--close div cintillo-->
+
+   <div class="row">
+       <div class="col-sm-3 homelink">
+          <a href="/">home</a>
+       </div><!-- 1er column--> 
+       <div class="col-sm-3">
+
+       </div><!-- 2da column--> 
+       <div class="col-sm-12 cornerrigth">
+          foto
+          <%if user_signed_in?%>                      
+             <class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <%end%>
+          <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
+       </div><!-- 3er column--> 
+   </div><!-- first row close-->
+
+
+  <div class="row">
+      
+        <div class="col-sm-3 datailcol">
+          Equipment
+       </div><!-- 1er column--> 
+
+        <div class="col-sm-2 maintenancecol">
+          Maintenances
+       </div><!-- 2da column--> 
+        <div class="col-sm-2 eventscol">
+          Rentals
+       </div><!-- 3era column--> 
+       <div class="col-sm-4 currentdatacol">
+          Current DATA
+       </div><!-- 4ta column--> 
+
+   </div><!-- 3ra row close-->
+
+
+   <div class="row">
+      <div class="col-sm-3 equipmentcol">
+          <ul>
+            <li class="letterlistequipment"><strong>NAME: </strong><%=@one_equipment.name%></li>
+            <li class="letterlistequipment"><strong>MODEL: </strong><%=@one_equipment.model%></li>
+            <li class="letterlistequipment"><strong>SERIAL: </strong><%=@one_equipment.serial%></li>
+            <li class="letterlistequipment"><strong>BRAND: </strong><%=@one_equipment.brand%></li>
+            <li class="letterlistequipment"><strong>PURCHASED DATE: </strong><%=@one_equipment.purchased_date.strftime("%m/%d/%y")%></li>
+            <li class="letterlistequipment"><strong>ORIGINAL PRICE: </strong><%=@one_equipment.original_price%></li>
+          </ul>
+
+
+          <div class="row">
+               <button class="btn js-updateequi" data-info="<%= @one_equipment.id %>">update</button>
+               <button class="btn js-deleteequi" data-info="<%= @one_equipment.id %>">delete</button>
+          </div><!--Close row button-->
+      </div><!-- 1er column--> 
+
+
+      <div class="col-sm-2 videocol">
+          <ul>
+            <%if @maintenances.length > 0%>
+               <% @maintenances.each do |one_maintenance|%>
+                 <li class="letterlistequipment"><strong>NAME: </strong><%=one_maintenance.name%></li>
+                 <li class="letterlistequipment"><strong>DESCRIPTION: </strong><%=one_maintenance.description%> </li>
+                 <li class="letterlistequipment"><strong>DATE: </strong><%=one_maintenance.date.strftime("%m/%d/%y")%></li>
+                 <li class="letterlistequipment"><strong>PRICE: </strong><%=one_maintenance.price%></li>
+                 <br>
+                <%end%>
+            <%end%>
+          </ul>
+
+          <div class="row">
+               <button class="btn js-addmaint">add</button>
+               <button class="btn js-updatemaint">update</button>
+               <button class="btn js-deletemaint">delete</button>
+
+          </div><!--Close row button-->
+
+       </div><!-- 2da column-->
+
+
+       <div class="col-sm-2 lightcol">
+            <ul>
+              <%if @rentals.length > 0%>
+                 <% @rentals.each do |one_rental|%>
+                     <li class="letterlistequipment"><strong>NAME: </strong><%=one_rental.name%></li>
+                     <li class="letterlistequipment"><strong>DATE: </strong><%=one_rental.date.strftime("%m/%d/%y")%></li>
+                     <li class="letterlistequipment"><strong>TOTAL PRICE RENTAL: </strong><%=one_rental.total_price%></li>
+                     <br>
+                 <%end%>
+              <%end%>
+            </ul>
+
+            <div class="row">
+               <button class="btn js-addrental">add</button>
+               <button class="btn js-updaterental">update</button>
+               <button class="btn js-deleterental">delete</button>
+
+          </div><!--Close row button-->
+
+       </div><!-- 3er column-->
+
+
+
+      <div class="col-sm-4 stagingcol">
+           <div class="col-sm-6">
+             <ul>
+                <li class="letterlistequipment"><strong>Current Difference against original price: </strong></li><br>
+
+                <li class="letterlistequipment"><strong>Current Difference against original price plus cost of all maintenances: </strong></li><br>
+                <br>
+
+                <li class="letterlistequipment"><strong>PROFIT: </strong></li><br>
+
+                <li class="letterlistequipment"><strong>RUNNING TIME: </strong></li><br>
+
+                <li class="letterlistequipment"><strong>REPORT DATE: </strong></li><br>
+             </ul>
+           </div>
+           <div class="col-sm-6">
+              <ul>
+                   
+                   <li class="letterlistequipment1"><strong><%=@totalprice_less_rentals%> $</strong></li><br>
+                   <br>
+                   <br>
+                   <li class="letterlistequipment1"><strong><%=@totalprice_plus_maintenances%> $</strong></li><br>
+                   <br>
+                   <li class="letterlistequipment1"><strong><%=@profit%> $</strong></li><br>
+
+                   <li class="letterlistequipment1"><strong> <%=@running_time_from%> years </strong></li><br>
+
+                   <li class="letterlistequipment1"><strong><%=@vartime_now.strftime("%m/%d/%y")%> </strong></li><br>
+              </ul>
+              <div class="row">
+                 <button class="btn js-sendemail">send copy to my email</button>
+              </div><!--Close row button-->
+           </div>
+          
+      </div><!-- 4da column--> 
+
+    
+    </div><!-- 3era row close-->
+
+    
+    <!-- agregue el modal que va a destruir mi codigo-->
+
+<div class="modal fade js-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <!-- Close button -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>&times;</span>
+        </button>
+
+        <h2 class="modal_title"></h2>
+      </div>
+
+      <div class="modal-body">
+        <p>This is the modal's body.</p>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- final del modal que va a destruir mi codigo-->
+
+
+
+
+    <div class="row">
+        <%=image_tag("logofooter", class: "imgfooter")%>
+    </div><!--Close footer-->
+</div><!-- container -->

@@ -1,0 +1,67 @@
+// Place all the styles related to the equipments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.col-sm-1{
+	/*border-style:dashed;*/
+	margin-right: 15px;
+
+	background-color: #A2A2A2;
+	text-align: center;
+
+}
+.col-sm-2{
+	/*border-style:dashed;*/
+	margin-right: 15px;
+
+	background-color: #A2A2A2;
+	text-align: center;
+	
+}
+.col-sm-3{
+	/*border-style:dashed;*/
+	margin-right: 15px;
+
+	background-color: #A2A2A2;
+    text-align: center;
+
+}
+.cornerrigth{
+	font-size: 11px;
+    background-color: #B9B8B8;
+	text-align: right;
+}
+.homelink{
+	background-color: #B9B8B8;
+	text-align: left;
+}
+.col-sm-4{
+	
+	/*border-style:dashed;*/
+	margin-right: 15px;
+	background-color: #A2A2A2;
+	text-align: center;
+
+}
+.imgtop{
+	width: 100%;
+}
+.letterlistequipment{
+	font-size: 11px;
+	text-align: left;
+}
+.letterlistequipment1{
+	font-size: 13px;
+	text-align: left;
+}
+
+ul{
+	list-style-type: none;
+	padding-left: 0;
+}
+.addequip{
+    text-align: center;
+}
+.logout{
+	font-size: 12px;
+}

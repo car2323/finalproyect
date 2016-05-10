@@ -1,0 +1,161 @@
+<div class="container">
+   <div class="row">
+      <%=image_tag("logotop", class: "imgtop")%>
+   </div> <!--close div cintillo-->
+
+   <div class="row">
+       <div class="col-sm-3 homelink">
+          <a href="/">home</a>
+       </div><!-- 1er column--> 
+       <div class="col-sm-3">
+       </div><!-- 2da column--> 
+       <div class="col-sm-12 cornerrigth">
+          foto
+          <%if user_signed_in?%>                      
+             <class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <%end%>
+          <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
+       </div><!-- 3er column--> 
+   </div><!-- first row close-->
+
+   <div class="row addequip">
+         <button class="btn js-new_equip">add equipment</button>
+   </div><!-- 2da row close-->
+
+   <div class="row">
+      
+        <div class="col-sm-2 audiocol">
+          Audio
+       </div><!-- 1er column--> 
+
+        <div class="col-sm-2 videocol">
+          Video
+       </div><!-- 2da column--> 
+        <div class="col-sm-2 lightcol">
+          Light
+       </div><!-- 3era column--> 
+       <div class="col-sm-2 stagingcol">
+          Staging
+       </div><!-- 4ta column--> 
+       <div class="col-sm-2 itcomputercol">
+          IT/Computer
+       </div><!-- 5ta column--> 
+
+   </div><!-- 3ra row close-->
+   <div class="row">
+
+
+              <div class="col-sm-2 audiocol">
+                <ul>
+                  <%if @array_audio.length > 0%>
+                    <% @array_audio.each do |one_audio|%>
+                       <a href="/equipments/<%=one_audio.id%>">
+                       <li class="letterlistequipment">
+                         <strong> Name: </strong> <%=one_audio.name%><br>
+                         <strong> Serial: </strong> <%=one_audio.serial%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                  <%end%>
+                </ul>
+             </div><!-- 1er column--> 
+
+
+
+             <div class="col-sm-2 videocol">
+                <ul>
+                <%if @array_video.length > 0%>
+                   <% @array_video.each do |one_video|%>
+                       <a href="/equipments/<%=one_video.id%>">
+                       <li class="letterlistequipment">
+                         <strong> Name: </strong> <%=one_video.name%><br>
+                         <strong> Serial: </strong> <%=one_video.serial%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                <%end%>
+                </ul>
+             </div><!-- 2da column-->
+
+
+             <div class="col-sm-2 lightcol">
+                  <ul>
+                  <%if @array_light.length > 0%>
+                    <% @array_light.each do |one_light|%>
+                       <a href="/equipments/<%=one_light.id%>">
+                       <li class="letterlistequipment">
+                         <strong> Name: </strong><%=one_light.name%><br>
+                         <strong> Serial: </strong> <%=one_light.serial%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                  <%end%>
+                  </ul>
+             </div><!-- 3er column-->
+
+
+             <div class="col-sm-2 stagingcol">
+              <ul>
+                <%if @array_staging.length > 0%>
+                 <% @array_staging.each do |one_staging|%>
+                       <a href="/equipments/<%=one_staging.id%>">
+                       <li class="letterlistequipment">
+                         <strong> Name: </strong><%=one_staging.name%><br>
+                         <strong> Serial: </strong> <%=one_staging.serial%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                <%end%>
+              </ul>
+             </div><!-- 4da column--> 
+          
+ 
+             <div class="col-sm-2 itcomputercol">
+                <ul>
+                  <%if @array_itcomputer.length > 0%>
+                   <% @array_itcomputer.each do |one_itcomputer|%>
+                       <a href="/equipments/<%=one_itcomputer.id%>">
+                       <li class="letterlistequipment">
+                        <strong> Name: </strong> <%=one_itcomputer.name%><br>
+                        <strong>Serial: </strong><%=one_itcomputer.serial%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                  <%end%>
+                </ul>
+             </div><!-- 5ta column--> 
+
+   
+
+  <!-- agregue el modal que va a destruir mi codigo-->
+
+      <div class="modal fade js-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <!-- Close button -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span>&times;</span>
+              </button>
+
+              <h2 class="modal_title"></h2>
+            </div>
+
+            <div class="modal-body">
+              <p>This is the modal's body.</p>
+            </div>
+
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+<!-- final del modal que va a destruir mi codigo-->
+
+   
+
+    </div><!-- 4ta row close-->
+    <div class="row">
+        <%=image_tag("logofooter", class: "imgfooter")%>
+    </div><!--Close footer-->
+</div><!-- container -->
