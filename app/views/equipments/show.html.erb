@@ -55,8 +55,8 @@
 
 
           <div class="row">
-               <button class="btn js-updateequi" data-info="<%= @one_equipment.id %>">update</button>
-               <button class="btn js-deleteequi" data-info="<%= @one_equipment.id %>">delete</button>
+               <button class="btn js-updateequi" data-equip="<%= @one_equipment.id %>">update</button>
+               <button class="btn js-deleteequi" data-equip="<%= @one_equipment.id %>">delete</button>
           </div><!--Close row button-->
       </div><!-- 1er column--> 
 
@@ -65,12 +65,13 @@
           <ul>
             <%if @maintenances.length > 0%>
                <% @maintenances.each do |one_maintenance|%>
-               <a href="#" class="js-clickmanintenance">
-                 <li class="letterlistequipment" data-info="<%= @one_maintenance.id%>"><strong>NAME: </strong><%=one_maintenance.name%></li>
+                 <a href="#" class="js-clickmanintenances" data-mainte="<%=  one_maintenance.id%>">
+                 <li class="letterlistequipment"><strong>NAME: </strong><%=one_maintenance.name%></li>
                  <li class="letterlistequipment"><strong>DESCRIPTION: </strong><%=one_maintenance.description%> </li>
                  <li class="letterlistequipment"><strong>DATE: </strong><%=one_maintenance.date.strftime("%m/%d/%y")%></li>
                  <li class="letterlistequipment"><strong>PRICE: </strong><%=one_maintenance.price%></li>
                  <br>
+               </a>
                 <%end%>
             <%end%>
           </ul>
@@ -87,19 +88,18 @@
             <ul>
               <%if @rentals.length > 0%>
                  <% @rentals.each do |one_rental|%>
-                     <li class="letterlistequipment" data-info="<%= @one_rental.id%>"><strong>NAME: </strong><%=one_rental.name%></li>
+                  <a href="#" class="js-clickrentals" data-rental="<%= one_rental.id%>">
+                     <li class="letterlistequipment"><strong>NAME: </strong><%=one_rental.name%></li>
                      <li class="letterlistequipment"><strong>DATE: </strong><%=one_rental.date.strftime("%m/%d/%y")%></li>
                      <li class="letterlistequipment"><strong>TOTAL PRICE RENTAL: </strong><%=one_rental.total_price%></li>
                      <br>
+                  </a>
                  <%end%>
               <%end%>
             </ul>
 
             <div class="row">
-               <button class="btn js-addrental">add</button>
-               <button class="btn js-updaterental">update</button>
-               <button class="btn js-deleterental">delete</button>
-
+              
           </div><!--Close row button-->
 
        </div><!-- 3er column-->

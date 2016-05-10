@@ -1,62 +1,47 @@
-$(document).on("page:load ready", function () {
+$(document).on("ready", function () {
   $(".modal-body").empty();
   $(".modal_title").empty();   
-  $(".js-addrental").on("click", function (event) {
+  $(".js-clickrentals").on("click", function (event) {
       event.preventDefault();
+      var equipment_id_btn = $(".js-updateequi");
+      var equipment_id = equipment_id_btn.data("equip");
 
-      var equipment_id_btn = $(event.currentTarget);
-      var equipment_id = equipment_id_btn.data("info");
-      //console.log(equipment_id);
+      console.log(equipment_id);
+
+      var rental_id_btn = $(event.currentTarget);
+      var rental_id = rental_id_btn.data("rental");
+
+      console.log(rental_id);
+      console.log ("/equipments/"+ equipment_id +"/rentals/"+ rental_id);
        $.ajax({     
-              url: "/equipments/"+ equipment_id/rentals,
-              success: function (equipment){
-                 display_update_rental(equipment);
-                 $(".updated_equip").on("click",function(){
-                  $(".modal").modal("hide");
-                  var post_data = {
-                      name: $("#name").val(),
-                      model: $("#model").val(),
-                      serial: $("#serial").val(),
-                      brand: $("#brand").val(),
-                      purchased_date: $("#datepurc").val(),
-                      original_price : $("#price").val()
-                    }
-                    $.ajax({
-                        type: "PATCH", 
-                        url: "/api/equipments/" + equipment_id,
-                        data: post_data,    
-
-                        success: function(){
-                          console.log("success");
-                          location.reload();
-                        }, 
-                        error: function(error) {
-                          console.log("LOSER!!!");
-                          console.log(error);
-                        }            
-                    }); 
-                   
-                     //console.log("hola");
-
-                 });
+              url: "/equipments/"+ equipment_id +"/rentals/"+ rental_id,
+              success: function (rental){
+                 display_rental(rental);
+                 console.log("success");
               },
-              error:function (equipment) {
+              error:function (rental) {
                   console.log("It failed. :( ");
                   console.log(theError.responseJSON);
               }
             }); 
    });
 });
-function display_update_rental(one_equipment){
+function display_rental(one_rental){
+  console.log("listo para imprimir");
   $(".modal-body").empty();
   $(".modal_title").empty();
-  $(".modal_title").append("Update Rantal Info");
-  $(".modal-body").append('<strong> NAME: </strong>  <input id="name" value="'+ one_equipment.name + '"><br>');
-  $(".modal-body").append('<strong> MODEL: </strong><input id="model" value="'+ one_equipment.model + '"><br>');
-  $(".modal-body").append('<strong> SERIAL: </strong><input id="serial" value="'+ one_equipment.serial + '"><br>');
-  $(".modal-body").append('<strong> BRAND: </strong><input id="brand" value="'+ one_equipment.brand + '"><br>');
-  $(".modal-body").append('<strong> PURCHARSED DATE: </strong><input id="datepurc" type="date" value="'+ one_equipment.purchased_date + '"><br>');
-  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input id="price" value="'+ one_equipment.original_price + '"><br>');
-  $(".modal-body").append('<button class="btn updated_equip">update</button>');
+
+    
+  $(".modal-body").append('<button class="btn add_rental">add new</button>');
+  $(".modal-body").append('<button class="btn updated_rental">update</button>');
+  $(".modal-body").append('<button class="btn btn-danger delete_rental">delete</button>');
   $(".modal").modal("show");
+  $(".updated_rental").on("click", function(){
+        $(".modal_title").append("Update Rental Info");
+        $(".modal-body").append('<strong> NAME: </strong>  <input id="name" value="'+ one_rental.name + '"><br>');
+        $(".modal-body").append('<strong> MODEL: </strong><input id="model" value="'+ one_rental.date + '"><br>');
+        $(".modal-body").append('<strong> SERIAL: </strong><input id="serial" value="'+ one_rental.total_price + '"><br>');
+        $(".modal-body").append('<button class="btn updated_rental">update</button>');
+
+   });
 };

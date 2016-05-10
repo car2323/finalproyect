@@ -1,11 +1,12 @@
 class RentalsController < ApplicationController
 	def show
-        one_equipment = Equipment.find(params[:id])
-		if one_equipment.nil?
+        one_equipment = Equipment.find(params[:equipment_id])
+        one_rental = one_equipment.rentals.find(params[:id])
+		if one_rental.nil?
             render json: { error: "Equipment not found" }, status: 404
             return
         end
-	 	render json: one_equipment
+	 	render json: one_rental
 	 	# status 201 --> Created  (cree el recurso que querias crear)
 	end
     def create

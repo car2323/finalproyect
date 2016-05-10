@@ -1,8 +1,8 @@
 $(document).on("page:load ready", function () {
   $(".modal-body").empty();
   $(".modal_title").empty();
-  console.log("llego a agregar equipment"); 
-  
+  //console.log("llego a agregar equipment"); 
+
   $(".js-new_equip").on("click", function (event) {
       event.preventDefault();
       console.log("adentro del evento"); 

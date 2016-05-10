@@ -4,7 +4,7 @@ $(document).on("page:load ready", function () {
   $(".js-deleteequi").on("click", function (event) {
       event.preventDefault();
       var equipment_id_btn = $(event.currentTarget);
-      var equipment_id = equipment_id_btn.data("info");
+      var equipment_id = equipment_id_btn.data("equip");
       //console.log(equipment_id);
        $.ajax({
                    

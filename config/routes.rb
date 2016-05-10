@@ -7,7 +7,13 @@ Rails.application.routes.draw do
     resources :equipments, controller: "equipment_api"
     #post '/api/equipments/id', to: 'equipment_api#update' 
   end
+  # scope "/rentals" do
+  #   resources :rentals, controller: "rentals"
+  #   #post '/api/equipments/id', to: 'equipment_api#update' 
+  # end
   
+
+
   get 'welcome/index'
   root 'welcome#index'
   
