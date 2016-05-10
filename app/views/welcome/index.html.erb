@@ -1,9 +1,24 @@
 <div class="container">
-    <div class="row">
-          <%if user_signed_in?%>   
-             <a class="log" href="/equipments">List Equipment |</a>
+
+<div class="row">
+
+       <div class="col-sm-3 cornerrigth1">
+          <%if user_signed_in?%>  
+            <a class="logout" href="/equipments">List Equipment |</a>                    
           <%end%>
-     </div><!--Close 1er row-->
+       </div><!-- 2da column--> 
+       <div class="col-sm-12 cornerrigth">
+        
+          <%if user_signed_in?%> 
+             foto        
+             <class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+             <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
+          <%else%>
+             <a class="logout" href="/users/sign_in">Login |</a>
+             <a class="logout" href="/users/sign_up">Sign up</a>
+          <%end%>  
+       </div><!-- 3er column--> 
+   </div><!-- first row close-->
 
 
 
@@ -13,10 +28,6 @@
 
       
       <div class="row textlink">
-	   <%if user_signed_in?%>                      
-        <p class="log"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
-     <%end%>
-      <a class="log" href="/users/sign_in">Login |</a>
-      <a class="log" href="/users/sign_up">Sign up</a>
+      
      </div><!--Close 3er row-->
 </div> <!--Close container-->

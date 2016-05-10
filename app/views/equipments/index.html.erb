@@ -4,17 +4,21 @@
    </div> <!--close div cintillo-->
 
    <div class="row">
-       <div class="col-sm-3 homelink">
+       <div class="col-sm-3 cornerrigth1">
           <a href="/">home</a>
        </div><!-- 1er column--> 
        <div class="col-sm-3">
        </div><!-- 2da column--> 
        <div class="col-sm-12 cornerrigth">
-          foto
-          <%if user_signed_in?%>                      
+           <%if user_signed_in?%> 
+             foto        
              <class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          <%end%>
-          <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
+             <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
+          <%else%>
+             <a class="logout" href="/users/sign_in">Login |</a>
+             <a class="logout" href="/users/sign_up">Sign up</a>
+          <%end%>  
+ 
        </div><!-- 3er column--> 
    </div><!-- first row close-->
 
@@ -152,7 +156,7 @@
 
 <!-- final del modal que va a destruir mi codigo-->
 
-   
+
 
     </div><!-- 4ta row close-->
     <div class="row">

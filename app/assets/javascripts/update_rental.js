@@ -1,16 +1,16 @@
 $(document).on("page:load ready", function () {
   $(".modal-body").empty();
   $(".modal_title").empty();   
-  $(".js-updateequi").on("click", function (event) {
+  $(".js-addrental").on("click", function (event) {
       event.preventDefault();
 
       var equipment_id_btn = $(event.currentTarget);
       var equipment_id = equipment_id_btn.data("info");
       //console.log(equipment_id);
-       $.ajax({       
-              url: "/api/equipments/"+ equipment_id,
+       $.ajax({     
+              url: "/equipments/"+ equipment_id/rentals,
               success: function (equipment){
-                 display_update_equip(equipment);
+                 display_update_rental(equipment);
                  $(".updated_equip").on("click",function(){
                   $(".modal").modal("hide");
                   var post_data = {
@@ -47,10 +47,10 @@ $(document).on("page:load ready", function () {
             }); 
    });
 });
-function display_update_equip(one_equipment){
+function display_update_rental(one_equipment){
   $(".modal-body").empty();
   $(".modal_title").empty();
-  $(".modal_title").append("Update Equipment Info");
+  $(".modal_title").append("Update Rantal Info");
   $(".modal-body").append('<strong> NAME: </strong>  <input id="name" value="'+ one_equipment.name + '"><br>');
   $(".modal-body").append('<strong> MODEL: </strong><input id="model" value="'+ one_equipment.model + '"><br>');
   $(".modal-body").append('<strong> SERIAL: </strong><input id="serial" value="'+ one_equipment.serial + '"><br>');

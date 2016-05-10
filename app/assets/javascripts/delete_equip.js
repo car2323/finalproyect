@@ -1,4 +1,4 @@
-$(document).on("page:load", function () {
+$(document).on("page:load ready", function () {
   $(".modal-body").empty();
   $(".modal_title").empty(); 
   $(".js-deleteequi").on("click", function (event) {

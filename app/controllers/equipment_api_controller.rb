@@ -9,7 +9,12 @@ class EquipmentApiController < ApplicationController
 	 	# status 201 --> Created  (cree el recurso que querias crear)
 	end
     def create
-        
+        one_equipment = current_user.equipment.new(:name => params[:name], :model => params[:model], 
+            :serial => params[:serial], :brand=> params[:brand], 
+            :purchased_date => params[:purchased_date], 
+            :category => params[:category],:original_price => params[:original_price])
+        one_equipment.save
+        render json: one_equipment, status: 201 
     end
 	def update
         one_equipment = Equipment.find(params[:id])
@@ -17,11 +22,11 @@ class EquipmentApiController < ApplicationController
         	render json: { error: "Equipment not found" }, status: 404
             return
         end
-                             #:name, :model, :serial, :brand, :purchased_date, :original_price
+                          
         one_equipment.update(:name => params[:name], :model => params[:model], 
             :serial => params[:serial], :brand=> params[:brand], 
             :purchased_date => params[:purchased_date], :original_price => params[:original_price])
-        render json: one_equipment, status: 201 #201 porque estoy agregando
+        render json: one_equipment, status: 201 
     end
     def destroy
         one_equipment = Equipment.find(params[:id])
