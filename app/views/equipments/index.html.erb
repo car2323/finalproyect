@@ -1,26 +1,26 @@
-<div class="container">
+<div class="container-fluid">
    <div class="row">
       <%=image_tag("logotop", class: "imgtop")%>
    </div> <!--close div cintillo-->
 
+   
    <div class="row">
-       <div class="col-sm-3 cornerrigth1">
-          <a href="/">home</a>
-       </div><!-- 1er column--> 
-       <div class="col-sm-3">
-       </div><!-- 2da column--> 
-       <div class="col-sm-12 cornerrigth">
-           <%if user_signed_in?%> 
-             foto        
-             <class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-             <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
+       
+          <a class="cornerleft1" href="/">home</a>
+      
+          <%if user_signed_in?%>       
+             <t class="cornerrigth3"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %><t/>
+              <t class="cornerrigth2">foto</t> 
+             <t class="cornerrigth"><strong>User: </strong> <%=current_user.name%></t>
           <%else%>
              <a class="logout" href="/users/sign_in">Login |</a>
              <a class="logout" href="/users/sign_up">Sign up</a>
           <%end%>  
- 
-       </div><!-- 3er column--> 
+
    </div><!-- first row close-->
+
+
+
 
    <div class="row addequip">
          <button class="btn js-new_equip">add equipment</button>
@@ -29,20 +29,20 @@
    <div class="row">
       
         <div class="col-sm-2 audiocol">
-          Audio
+          <strong>Audio</strong>
        </div><!-- 1er column--> 
 
         <div class="col-sm-2 videocol">
-          Video
+          <strong>Video</strong>
        </div><!-- 2da column--> 
         <div class="col-sm-2 lightcol">
-          Light
+          <strong>Light</strong>
        </div><!-- 3era column--> 
        <div class="col-sm-2 stagingcol">
-          Staging
+          <strong>Staging</strong>
        </div><!-- 4ta column--> 
        <div class="col-sm-2 itcomputercol">
-          IT/Computer
+          <strong>IT/Computer</strong>
        </div><!-- 5ta column--> 
 
    </div><!-- 3ra row close-->

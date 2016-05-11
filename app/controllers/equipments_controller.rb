@@ -43,6 +43,12 @@ class EquipmentsController < ApplicationController
             render "no_eqipments_page"
             return
         end
+
+        if @one_equipment.user_id != current_user.id
+            redirect_to "/"
+            return
+        end
+
         @maintenances=@one_equipment.maintenances
         @rentals=@one_equipment.rentals
         @totalprice_less_rentals=current_data_rentals(@one_equipment,@rentals)
@@ -53,6 +59,8 @@ class EquipmentsController < ApplicationController
 		render "show"
 	end
 
+
+    private
 	def current_data_maintenances(one_equipment,maintenances, rentals)
        
         totalprice_maintenances = current_data_rentals(one_equipment, rentals)

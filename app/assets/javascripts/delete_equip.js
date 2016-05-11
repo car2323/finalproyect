@@ -39,7 +39,7 @@ $(document).on("page:load ready", function () {
 function display_delete_equip(one_equipment){
   $(".modal-body").empty();
   $(".modal_title").empty();
-  $(".modal_title").append("DELETE Equipment");
+  $(".modal_title").append("<t class='letterred'>DELETE Equipment</t>");
   $(".modal-body").append('<strong> NAME: </strong>'+ one_equipment.name +'<br>');
   $(".modal-body").append('<strong> MODEL: </strong>'+ one_equipment.model +'<br>');
   $(".modal-body").append('<strong> SERIAL: </strong>'+ one_equipment.serial +'<br>');

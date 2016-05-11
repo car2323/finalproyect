@@ -38,14 +38,14 @@ $(document).on("page:load ready", function () {
 function display_create_mainte(){
   $(".modal-body").empty();
   $(".modal_title").empty();
-  $(".modal_title").append("Create new Maintenance");
+  $(".modal_title").append("<t class='letterblue'>Create new Maintenance</t>");
   $(".modal").modal("show");
 	$(".modal-body").append('<strong> NAME: </strong>  <input id="name_mainte"><br>');
   $(".modal-body").append('<strong> DESCRIPTION: </strong>  <input id="description_mainte"><br>');
 	$(".modal-body").append('<strong> DATE: </strong><input type="date" id="date_mainte"><br>');
 	$(".modal-body").append('<strong> PRICE: </strong><input id="price"><br>');
 	$(".modal-body").append("<br>");
-	$(".modal-body").append('<button class="btn create_mainte">add new</button>');
+	$(".modal-body").append('<button class="btn create_mainte letterblue">add new</button>');
 };
 
 

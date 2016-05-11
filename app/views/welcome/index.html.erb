@@ -1,25 +1,23 @@
-<div class="container">
+<div class="container-fluid">
 
 <div class="row">
 
-       <div class="col-sm-3 cornerrigth1">
-          <%if user_signed_in?%>  
-            <a class="logout" href="/equipments">List Equipment |</a>                    
-          <%end%>
-       </div><!-- 2da column--> 
-       <div class="col-sm-12 cornerrigth">
-        
-          <%if user_signed_in?%> 
-             foto        
-             <class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-             <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
-          <%else%>
-             <a class="logout" href="/users/sign_in">Login |</a>
-             <a class="logout" href="/users/sign_up">Sign up</a>
-          <%end%>  
-       </div><!-- 3er column--> 
-   </div><!-- first row close-->
 
+
+<div class="row">
+          <%if user_signed_in?%> 
+             <a class="cornerleft1" href="/equipments">List Equipment |</a>       
+             <t class="cornerrigth3"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              <t/>
+              <t class="cornerrigth2">foto</t> 
+             <t class="cornerrigth"><strong>User: </strong> <%=current_user.name%></t>
+          <%else%>
+             <a class="cornerrigth4" href="/users/sign_up"> Sign up</a>
+             <a class="cornerrigth2" href="/users/sign_in">Login |</a>
+             
+          <%end%>  
+
+   </div><!-- first row close-->
 
 
       <div class="row picturehome">

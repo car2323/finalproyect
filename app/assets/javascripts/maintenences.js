@@ -14,7 +14,7 @@ $(document).on("page:load ready", function () {
        $.ajax({     
               url: string_url,
               success: function (maintenance){
-                 display_maintenance(rental, string_url);
+                 display_maintenance(maintenance, string_url);
                  console.log("Success");
               },
               error:function (maintenance) {
@@ -30,38 +30,41 @@ function display_maintenance(one_maintenance, string_url){
 
   $(".modal_title").append("Chose one option MAINTENANCE"); 
   $(".modal-body").append(' ');
-  $(".modal-body").append('<button class="btn update_rental">update</button>');
+  $(".modal-body").append('<button class="btn update_mainte">update</button>');
   $(".modal-body").append(' ');
-  $(".modal-body").append('<button class="btn btn-danger delete_rental">delete</button>');
+  $(".modal-body").append('<button class="btn btn-danger delete_mainte">delete</button>');
   $(".modal-body").append("<br>");
   $(".modal-body").append("<br>");
   $(".modal").modal("show");
-  $(".update_rental").on("click", function(){
+  $(".update_mainte").on("click", function(){
         $(".modal_title").empty();
-        $(".modal_title").append("Update Rental Info");
-        $(".modal-body").append('<strong> NAME: </strong>  <input id="name_rental" value="'+ one_rental.name + '"><br>');
-        $(".modal-body").append('<strong> DATE: </strong><input id="date_rental" value="'+ one_rental.date + '"><br>');
-        $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="total_price_rental" value="'+ one_rental.total_price + '"><br>');
+        $(".modal-body").empty();
+        $(".modal_title").append("<t class='letterorange'>Update Maintenance Info</t>");
+        $(".modal-body").append('<strong> NAME: </strong>  <input id="name_mainte" value="'+ one_maintenance.name + '"><br>');
+        $(".modal-body").append('<strong> DESCRIPTION: </strong>  <input id="name_mainte" value="'+ one_maintenance.description + '"><br>');
+        $(".modal-body").append('<strong> DATE: </strong><input id="date_mainte" value="'+ one_maintenance.date + '"><br>');
+        $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="price" value="'+ one_maintenance.price + '"><br>');
         $(".modal-body").append("<br>");
-        $(".modal-body").append('<button class="btn updated_rental">update</button>');
+        $(".modal-body").append('<button class="btn updated_mainte letterorange">update</button>');
 
-        $(".updated_rental").on("click", function () {
-                      update_rentals(string_url);
+        $(".updated_mainte").on("click", function () {
+                      update_mainte(string_url);
                       $(".modal").modal("hide");
         });
   });
-  $(".delete_rental").on("click", function(){
+  $(".delete_mainte").on("click", function(){
         $(".modal_title").empty();
         $(".modal-body").empty();
-        $(".modal_title").append("DELETE Rental Info");
-        $(".modal-body").append('<strong> NAME: </strong>'+ one_rental.name + '<br>');
-        $(".modal-body").append('<strong> DATE: </strong>'+ one_rental.date + '<br>');
-        $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong>'+ one_rental.total_price + '<br>');
+        $(".modal_title").append("<t class='letterred'>DELETE Maintenance Info</t>");
+        $(".modal-body").append('<strong> NAME: </strong>'+ one_maintenance.name + '<br>');
+        $(".modal-body").append('<strong> DESCRIPTION: </strong>'+ one_maintenance.description + '<br>');
+        $(".modal-body").append('<strong> DATE: </strong>'+ one_maintenance.date + '<br>');
+        $(".modal-body").append('<strong> PRICE: </strong>'+ one_maintenance.price + '<br>');
         $(".modal-body").append("<br>");
-        $(".modal-body").append('<button class="btn btn-danger deleted_rental">delete</button>');
+        $(".modal-body").append('<button class="btn btn-danger deleted_mainte">delete</button>');
 
-        $(".deleted_rental").on("click", function () {
-                      deleted_rental(string_url);
+        $(".deleted_mainte").on("click", function () {
+                      deleted_mainte(string_url);
                       $(".modal").modal("hide");
         });  
   });

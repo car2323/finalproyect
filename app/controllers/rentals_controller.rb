@@ -1,7 +1,12 @@
 class RentalsController < ApplicationController
 	def show
+
         one_equipment = Equipment.find(params[:equipment_id])
         one_rental = one_equipment.rentals.find(params[:id])
+        if one_equipment.user_id != current_user.id
+            redirect_to "/"
+            return
+        end
 		if one_rental.nil?
             render json: { error: "Equipment not found" }, status: 404
             return
@@ -20,7 +25,7 @@ class RentalsController < ApplicationController
         one_equipment = Equipment.find(params[:equipment_id])
         one_rental = one_equipment.rentals.find(params[:id])
 		if one_rental.nil?
-            render json: { error: "Rentals not found" }, status: 404
+            render json: { error: "Equipment not found" }, status: 404
             return
         end
                 
@@ -31,7 +36,7 @@ class RentalsController < ApplicationController
         one_equipment = Equipment.find(params[:equipment_id])
         one_rental = one_equipment.rentals.find(params[:id])
 		if one_rental.nil?
-            render json: { error: "Rentals not found" }, status: 404
+            render json: { error: "Equipment not found" }, status: 404
             return
         end
         one_rental.destroy

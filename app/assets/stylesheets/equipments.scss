@@ -2,64 +2,95 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container-fluid{
+  background-color: white;
+  width:100%; 
+}
+.row{
+	background-color: white
+}
+.equipmentcol{
+	margin-left: 25px;
+
+}
+.datailcol{
+	margin-left: 25px;
+	border-bottom: solid white;
+}
+.audiocol{
+  margin-left: 25px;
+  border-bottom: solid white;	
+}
 .col-sm-1{
 	/*border-style:dashed;*/
 	margin-right: 15px;
 
-	background-color: #A2A2A2;
+	background-color: rgba(173, 172, 172, 0.42);
 	text-align: center;
-
 }
 .col-sm-2{
 	/*border-style:dashed;*/
 	margin-right: 15px;
 
-	background-color: #A2A2A2;
+	background-color: rgba(173, 172, 172, 0.42);
 	text-align: center;
-	
 }
 .col-sm-3{
 	/*border-style:dashed;*/
 	margin-right: 15px;
 
-	background-color: #A2A2A2;
+	background-color: rgba(173, 172, 172, 0.42);
     text-align: center;
 
 }
-.cornerrigth{
+.cornerrigth3{
 	font-size: 11px;
-    background-color: #B9B8B8;
-	text-align: right;
-	margin-bottom: 10px;
+    background-color: white;
+    float: right;
+    margin-right: 35px;
 }
-.cornerrigth1{
+.cornerrigth2{
 	font-size: 11px;
-    background-color: #B9B8B8;
+    background-color: white;
+    float:right;
+
+}
+.cornerleft1{
+	font-size: 11px;
+    background-color: white;
 	text-align: left;
 	margin-top: 10px;
+	margin-left: 25px;
 }
-.homelink{
-	background-color: #B9B8B8;
-	text-align: left;
+.cornerrigth4{
+	font-size: 11px;
+    background-color: white;
+    float:right;
+    margin-right: 35px;
 }
 .col-sm-4{
 	
 	/*border-style:dashed;*/
 	margin-right: 15px;
-	background-color: #A2A2A2;
+	background-color: rgba(173, 172, 172, 0.42);
 	text-align: center;
+
 
 }
 .imgtop{
 	width: 100%;
+}
+.letterlistequipment2{
+	font-size: 13px;
+	text-align: left;
 }
 .letterlistequipment{
 	font-size: 11px;
 	text-align: left;
 }
 .letterlistequipment1{
-	font-size: 13px;
-	text-align: left;
+	font-size: 15px;
+	text-align: right;
 }
 
 ul{
@@ -67,8 +98,35 @@ ul{
 	padding-left: 0;
 }
 .addequip{
+	margin-bottom: 20px;
     text-align: center;
+    background-color: white;
 }
-.logout{
-	font-size: 12px;
+.updateequi{
+    margin-top: 15px;
+
+}
+.deleteequi{
+    margin-top: 15px;
+
+}
+.addmainte{
+   margin-top: 15px;
+}
+.addrental{
+   margin-top: 15px;	
+}
+.sendemail{
+    float: right;
+    margin-right: 170px;
+    margin-top: 15px;
+}
+.letterred{
+  color: red;
+}
+.letterblue{
+ color: #2D75AB;
+}
+.letterorange{
+color:rgba(255, 122, 0, 0.91);;
 }

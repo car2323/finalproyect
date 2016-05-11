@@ -12,6 +12,8 @@ $(document).on("page:load ready", function () {
               success: function (equipment){
                  display_update_equip(equipment);
                  $(".updated_equip").on("click",function(){
+                  var vali_var=validations();
+              if (vali_var === true){
                   $(".modal").modal("hide");
                   var post_data = {
                       name: $("#name").val(),
@@ -19,6 +21,7 @@ $(document).on("page:load ready", function () {
                       serial: $("#serial").val(),
                       brand: $("#brand").val(),
                       purchased_date: $("#datepurc").val(),
+                      category: $("#category_equip").val(),
                       original_price : $("#price").val()
                     }
                     $.ajax({
@@ -35,7 +38,11 @@ $(document).on("page:load ready", function () {
                           console.log(error);
                         }            
                     }); 
-                   
+              }
+              else
+              {
+                alert("Check a empty field BEFORE UPDATE") 
+              }    
                      //console.log("hola");
 
                  });
@@ -50,13 +57,24 @@ $(document).on("page:load ready", function () {
 function display_update_equip(one_equipment){
   $(".modal-body").empty();
   $(".modal_title").empty();
-  $(".modal_title").append("Update Equipment Info");
+  $(".modal_title").append("<t class='letterorange'>Update Equipment Info</t>");
   $(".modal-body").append('<strong> NAME: </strong>  <input id="name" value="'+ one_equipment.name + '"><br>');
   $(".modal-body").append('<strong> MODEL: </strong><input id="model" value="'+ one_equipment.model + '"><br>');
   $(".modal-body").append('<strong> SERIAL: </strong><input id="serial" value="'+ one_equipment.serial + '"><br>');
   $(".modal-body").append('<strong> BRAND: </strong><input id="brand" value="'+ one_equipment.brand + '"><br>');
   $(".modal-body").append('<strong> PURCHARSED DATE: </strong><input id="datepurc" type="date" value="'+ one_equipment.purchased_date + '"><br>');
+
+  $(".modal-body").append('<strong> CATEGORY: </strong>'+`<select id="category_equip">
+                                                             <option value=" ">-Select an option-</option>
+                                                             <option value="AUDIO">AUDIO</option>
+                                                             <option value="VIDEO">VIDEO</option>
+                                                             <option value="LIGHT">LIGHT</option>
+                                                             <option value="STAGING">STAGING</option>
+                                                             <option value="ITCOMPUTER">IT/COMPUTER</option>
+                                                          </select><br>`);
+
+
   $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input id="price" value="'+ one_equipment.original_price + '"><br>');
-  $(".modal-body").append('<button class="btn updated_equip">update</button>');
+  $(".modal-body").append('<button class="btn updated_equip letterorange">update</button>');
   $(".modal").modal("show");
 };

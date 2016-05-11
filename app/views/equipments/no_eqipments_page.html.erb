@@ -1,31 +1,26 @@
 
-<div class="container">
+<div class="container-fluid">
 
 	<div class="row">
       <%=image_tag("logotop", class: "imgtop")%>
    </div> <!--close div cintillo-->
     <div class="row">
        <h1>You have no equipments<h1>
-       <div class="col-sm-3 cornerrigth1">
-          <a class="logout" href="/">home</a>
-       </div><!-- 1er column--> 
-       
-       <div class="col-sm-12 cornerrigth">
-           <%if user_signed_in?%> 
-             foto        
-             <class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-             <class="cornerrigth"><strong>User: </strong> <%=current_user.name%></a>
-          <%else%>
-             <a class="logout" href="/users/sign_in">Login |</a>
-             <a class="logout" href="/users/sign_up">Sign up</a>
-          <%end%>  
-       </div><!-- 3er column--> 
-       <div class="row addequip">
-         <button class="btn js-new_equip">add equipment</button>
-       </div><!-- 2da row close-->
-
+        <a class="cornerleft1" href="/">home</a>
+    
+        <%if user_signed_in?%>       
+           <t class="cornerrigth3"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %><t/>
+            <t class="cornerrigth2">foto</t> 
+           <t class="cornerrigth"><strong>User: </strong> <%=current_user.name%></t>
+        <%else%>
+           <a class="logout" href="/users/sign_in">Login |</a>
+           <a class="logout" href="/users/sign_up">Sign up</a>
+        <%end%>  
 
     </div>
+    <div class="row addequip">
+         <button class="btn js-new_equip">add equipment</button>
+       </div><!-- 3ra row close-->
     <div class="row">
     	 <%=image_tag("fuel", class: "logocenterfuel")%>
     </div>

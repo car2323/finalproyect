@@ -38,13 +38,13 @@ $(document).on("page:load ready", function () {
 function display_create_rental(){
     $(".modal-body").empty();
     $(".modal_title").empty();
-    $(".modal_title").append("Create new Rental");
+    $(".modal_title").append("<t class='letterblue'>Create new Rental</t>");
     $(".modal").modal("show");
 	$(".modal-body").append('<strong> NAME: </strong>  <input id="name_rental"><br>');
 	$(".modal-body").append('<strong> DATE: </strong><input type="date" id="date_rental"><br>');
 	$(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="total_price_rental"><br>');
 	$(".modal-body").append("<br>");
-	$(".modal-body").append('<button class="btn create_rental">add new</button>');
+	$(".modal-body").append('<button class="btn create_rental letterblue">add new</button>');
 };
 
 
