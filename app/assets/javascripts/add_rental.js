@@ -17,6 +17,9 @@ $(document).on("page:load ready", function () {
       date: $("#date_rental").val(),
       total_price: $("#total_price_rental").val(),
       }
+      var valid_rental = rental_validations();
+    if (valid_rental=== true)
+    { 
       $(".modal").modal("hide");
         $.ajax({
             type: "POST", 
@@ -30,7 +33,12 @@ $(document).on("page:load ready", function () {
               console.log("FAIL!!!");
               console.log(error);
             }            
-        }); 
+        });
+    }
+    else
+    {
+      alert("Check a empty field BEFORE CREATE");
+    } 
      });  
      
    });
@@ -40,11 +48,11 @@ function display_create_rental(){
     $(".modal_title").empty();
     $(".modal_title").append("<t class='letterblue'>Create new Rental</t>");
     $(".modal").modal("show");
-	$(".modal-body").append('<strong> NAME: </strong>  <input id="name_rental"><br>');
-	$(".modal-body").append('<strong> DATE: </strong><input type="date" id="date_rental"><br>');
-	$(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="total_price_rental"><br>');
-	$(".modal-body").append("<br>");
-	$(".modal-body").append('<button class="btn create_rental letterblue">add new</button>');
+	  $(".modal-body").append('<strong> NAME: </strong>  <input id="name_rental"><br>');
+	  $(".modal-body").append('<strong> DATE: </strong><input type="date" id="date_rental"><br>');
+	  $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="total_price_rental"><br>');
+	  $(".modal-body").append("<br>");
+	  $(".modal-body").append('<button class="btn create_rental letterblue">add new</button>');
 };
 
 

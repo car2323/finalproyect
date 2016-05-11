@@ -18,8 +18,11 @@ class RentalsController < ApplicationController
         one_equipment = Equipment.find(params[:equipment_id])
         one_rental = one_equipment.rentals.new(:name => params[:name], :date => params[:date], 
             :total_price => params[:total_price])
-        one_rental.save
-        render json: one_rental, status: 201 
+        if one_rental.save
+           render json: one_rental, status: 201 
+        else
+          render json: { error: "One field is empty CREATE" }, status: 501
+        end
     end
 	def update
         one_equipment = Equipment.find(params[:equipment_id])
@@ -29,8 +32,13 @@ class RentalsController < ApplicationController
             return
         end
                 
-        one_rental.update(:name => params[:name], :date => params[:date], :total_price => params[:total_price])
-        render json: one_rental, status: 201 
+        if one_rental.update(:name => params[:name], 
+            :date => params[:date], :total_price => params[:total_price])
+            render json: one_rental, status: 201 
+        else
+          render json: { error: "One field is empty for UPDATE" }, status: 501  
+        end
+        
     end
     def destroy
         one_equipment = Equipment.find(params[:equipment_id])

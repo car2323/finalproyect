@@ -18,8 +18,11 @@ class EquipmentApiController < ApplicationController
             :serial => params[:serial], :brand=> params[:brand], 
             :purchased_date => params[:purchased_date], 
             :category => params[:category],:original_price => params[:original_price])
-        one_equipment.save
-        render json: one_equipment, status: 201 
+        if one_equipment.save
+           render json: one_equipment, status: 201 
+        else
+           render json: { error: "One field is empty for CREATE" }, status: 501
+        end
     end
 	def update
         one_equipment = Equipment.find(params[:id])
@@ -28,11 +31,14 @@ class EquipmentApiController < ApplicationController
             return
         end
                           
-        one_equipment.update(:name => params[:name], :model => params[:model], 
+        if one_equipment.update(:name => params[:name], :model => params[:model], 
             :serial => params[:serial], :brand=> params[:brand], 
             :purchased_date => params[:purchased_date], 
             :category => params[:category],:original_price => params[:original_price])
-        render json: one_equipment, status: 201 
+            render json: one_equipment, status: 201 
+        else
+            render json: { error: "One field is empty for UPDATE" }, status: 501
+        end
     end
     def destroy
         one_equipment = Equipment.find(params[:id])

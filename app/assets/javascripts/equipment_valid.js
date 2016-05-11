@@ -1,4 +1,4 @@
-function validations(){
+function equipment_validations(){
  var vali_var = true;
    if(($("#name").val()==="")|| ($("#model").val()==="") || ($("#serial").val()==="")
    	|| ($("#brand").val()==="")|| ($("#datepurc").val()==="")|| 

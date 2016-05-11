@@ -5,8 +5,8 @@
 
    <div class="row">
        
-          <a class="cornerleft1" href="/">home</a>
-      
+          <a class="cornerleft1" href="/">home | </a>
+          <a class="cornerleft1especial" href="/equipments">List Equipment</a> 
           <%if user_signed_in?%>       
              <t class="cornerrigth3"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %><t/>
               <t class="cornerrigth2">foto</t> 
@@ -15,7 +15,9 @@
              <a class="logout" href="/users/sign_in">Login |</a>
              <a class="logout" href="/users/sign_up">Sign up</a>
           <%end%>  
-
+     <br>
+     <br>
+     <br>
    </div><!-- first row close-->
 
 
@@ -41,6 +43,7 @@
    <div class="row">
       <div class="col-sm-3 equipmentcol">
           <ul>
+            <%=image_tag("default_img", class: "equipplaceholder")%>
             <li class="letterlistequipment"><strong>NAME: </strong><%=@one_equipment.name%></li>
             <li class="letterlistequipment"><strong>MODEL: </strong><%=@one_equipment.model%></li>
             <li class="letterlistequipment"><strong>SERIAL: </strong><%=@one_equipment.serial%></li>

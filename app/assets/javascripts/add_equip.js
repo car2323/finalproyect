@@ -17,7 +17,7 @@ $(document).on("page:load ready", function () {
         category: $("#category_equip").val(),
         original_price : $("#price").val()
       }
-   var vali_var=validations();
+   var vali_var=equipment_validations();
    if (vali_var === true){    
       $(".modal").modal("hide");
         $.ajax({
@@ -46,6 +46,7 @@ function display_create_equip(){
   $(".modal-body").empty();
   $(".modal_title").empty();
   $(".modal_title").append("<t class='letterblue'>Create new Equipment</t>");
+
   $(".modal-body").append('<strong> NAME: </strong><input id="name"><br>');
   $(".modal-body").append('<strong> MODEL: </strong><input id="model"><br>');
   $(".modal-body").append('<strong> SERIAL: </strong><input id="serial"><br>');

@@ -6,6 +6,8 @@ function update_mainte(string_url){
       date: $("#date_mainte").val(),
       price: $("#price").val(),
       }
+  var valid_maintenance = maintenance_validations();
+  if(valid_maintenance===true){  
     $.ajax({
         type: "PATCH", 
         url: string_url,
@@ -13,10 +15,15 @@ function update_mainte(string_url){
         success: function(){
           console.log("Success PATCH");
           location.reload();
+          $(".modal").modal("hide");
         }, 
         error: function(error) {
           console.log("LOSER!!!");
           console.log(error);
         }            
-    }); 
+    });
+  } 
+  else{
+    alert("Check a empty field BEFORE UPDATE");
+  }
 };

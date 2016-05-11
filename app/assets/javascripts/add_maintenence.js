@@ -17,6 +17,8 @@ $(document).on("page:load ready", function () {
       date: $("#date_mainte").val(),
       price: $("#price").val(),
       }
+      var valid_maintenance = maintenance_validations();
+    if(valid_maintenance===true){  
       $(".modal").modal("hide");
         $.ajax({
             type: "POST", 
@@ -30,7 +32,11 @@ $(document).on("page:load ready", function () {
               console.log("FAIL!!!");
               console.log(error);
             }            
-        }); 
+        });
+     }
+     else{
+      alert("Check a empty field BEFORE CREATE");
+     } 
      });  
      
    });
