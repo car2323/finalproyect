@@ -39,7 +39,7 @@ class EquipmentsController < ApplicationController
         render "index"
 	end
 	def show#current_user.
-        @one_equipment = Equipment.find(params[:id])
+        @one_equipment = current_user.equipment.find(params[:id])
 
 		if @one_equipment.nil?
             render "no_eqipments_page"
@@ -60,7 +60,12 @@ class EquipmentsController < ApplicationController
         @vartime_now = time_now
 		render "show"
 	end
-
+    def update
+       @one_equipment = current_user.equipment.find(params[:id])
+        if @one_equipment.update(:image => params[:image])
+            render "/"
+        end
+    end
 
     private
 	def current_data_maintenances(one_equipment,maintenances, rentals)

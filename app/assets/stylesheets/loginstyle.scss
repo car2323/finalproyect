@@ -14,23 +14,47 @@
 
 	margin-left: auto;
 	margin-right: auto;
-	width: 6em;
+    width: 11em;
+}
+.field1{
+
+	margin-left: auto;
+	margin-right: auto;
+    width: 11em;
+}
+.field2{
+
+	margin-left: auto;
+	margin-right: auto;
+    width: 19em;
 }
 .fieldother{
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 6em;
+    width: 6em;
 }
 .actions{
 
 	margin-left: auto;
 	margin-right: auto;
-	width: 6em;
+    width: 3em;
 }
 .loginlinkhome{
 	text-align: center;
 }
+.img_move{
+	float: right;
+    text-align: right;
+	background-color: rgba(173, 172, 172, 0.42);
 
-
+}
+#equipment_image{
+	float: right;
+    text-align: right;
+    background-color: rgba(173, 172, 172, 0);
+}
+.findbox{
+	float: right;
+}
 

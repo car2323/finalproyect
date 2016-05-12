@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512161326) do
+ActiveRecord::Schema.define(version: 20160512201355) do
 
   create_table "equipment", force: :cascade do |t|
     t.integer  "user_id"
@@ -21,10 +21,13 @@ ActiveRecord::Schema.define(version: 20160512161326) do
     t.date     "purchased_date"
     t.float    "original_price"
     t.string   "category"
-    t.string   "image"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "model"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "equipment", ["user_id"], name: "index_equipment_on_user_id"

@@ -23,11 +23,16 @@
 
     <div class="field">
       <%= f.label :password %>
+    </div>
+    <div class="field1">
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
+    </div>
+    <div class="field">
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
+  
 
     <div class="field">
       <%= f.label :password_confirmation %><br />
@@ -40,7 +45,8 @@
 
     <div class="field">
       <%= f.label :image %><br />
-      <%= f.file_field :image, autocomplete: "off" %>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
+      <%= f.file_field :image, autocomplete: "off" %>
+      <br>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
     </div>
 
     <div class="actions">
@@ -52,6 +58,7 @@
     <br>
     <br>
     <div class="row">
+      <br>
         <%=image_tag("logofooter", class: "imgfooter")%>
     </div><!--Close footer-->
 </div><!--Close container-->

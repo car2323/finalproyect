@@ -1,3 +1,11 @@
+<div class="container-fluid">
+    <div class="row">
+      <%=image_tag("logotop", class: "imgtop")%>
+      <a class="cornerleft1" href="/">home | </a>
+      <a class="cornerleft1especial" href="/equipments">List Equipment</a>
+    </div> <!--close div cintillo-->
+
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -14,27 +22,34 @@
 
    <div class="field">
       <%= f.label :name %><br />
-      <%= f.name_field :name, autofocus: true %>    <!--LO AGREGRE YO EL MAY SAT 08 2016-->
+      <%= f.text_field :name %>    <!--LO AGREGRE YO EL MAY SAT 08 2016-->
     </div>
 
-  <div class="field">
+  <div class="field2">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  </div>
+  <div class="field">
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= f.label :password_confirmation %><br />
+  </div>
+  <div class="field1">
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  </div>
+  <div class="field1">
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="field">
       <%= f.label :image %><br />
-      <%= f.image :image, autocomplete: "off" %>    <!--LO AGREGRE YO EL MAY SAT 08 2016-->
+      <%= f.file_field :image, autocomplete: "off" %> 
+      <br>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
     </div>
 
   <div class="actions">
@@ -44,6 +59,13 @@
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p><br>
 
 <%= link_to "Back", :back %>
+    <br>
+    <br>
+    <div class="row">
+        <%=image_tag("logofooter", class: "imgfooter")%>
+    </div><!--Close footer-->
+</div><!--Close container-->
+
