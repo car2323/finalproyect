@@ -20,28 +20,10 @@
      <br>
    </div><!-- first row close-->
 
-
-  <div class="row">
-      
-        <div class="col-sm-3 datailcol">
-          <strong>Equipment</strong>
-       </div><!-- 1er column--> 
-
-        <div class="col-sm-2 maintenancecol">
-          <strong>Maintenances</strong>
-       </div><!-- 2da column--> 
-        <div class="col-sm-2 eventscol">
-          <strong>Rentals</strong>
-       </div><!-- 3era column--> 
-       <div class="col-sm-4 currentdatacol">
-          <strong>Current DATA</strong>
-       </div><!-- 4ta column--> 
-
-   </div><!-- 3ra row close-->
-
-
    <div class="row">
       <div class="col-sm-3 equipmentcol">
+          <strong>Equipment</strong><p>
+          <br>
           <ul>
             <%=image_tag("default_img", class: "equipplaceholder")%>
             <li class="letterlistequipment"><strong>NAME: </strong><%=@one_equipment.name%></li>
@@ -55,12 +37,15 @@
 
           <div class="row">
                <button class="btn updateequi js-updateequi" data-equip="<%= @one_equipment.id %>">update</button>
-               <button class="btn deleteequi js-deleteequi" data-equip="<%= @one_equipment.id %>">delete</button>
+               <button class="btn deleteequi js-deleteequi" data-equip="<%= @one_equipment.id %>">delete</button><p>
+               <br>
           </div><!--Close row button-->
       </div><!-- 1er column--> 
 
 
-      <div class="col-sm-2 videocol">
+      <div class="col-sm-2 maintecol">
+         <strong>Maintenance</strong><p>
+         <br>
           <ul>
             <%if @maintenances.length > 0%>
                <% @maintenances.each do |one_maintenance|%>
@@ -76,14 +61,17 @@
           </ul>
 
           <div class="row">
-                      <button class="btn addmainte js-addmainte">add new</button>
+                      <button class="btn addmainte js-addmainte">add new</button><p>
+               <br>
 
           </div><!--Close row button-->
 
        </div><!-- 2da column-->
 
 
-       <div class="col-sm-2 lightcol">
+       <div class="col-sm-2 rentalcol">
+           <strong>Rentals</strong><p>
+           <br>
             <ul>
               <%if @rentals.length > 0%>
                  <% @rentals.each do |one_rental|%>
@@ -97,64 +85,78 @@
               <%end%>
             </ul>
             <div class="row">
-                <button class="btn addrental js-addrental">add new</button>
+                <button class="btn addrental js-addrental">add new</button><p>
+               <br>
           </div><!--Close row button-->
 
        </div><!-- 3er column-->
 
 
-      <div class="col-sm-4 stagingcol">
-           <div class="col-sm-6">
-             <ul>
-                <li class="letterlistequipment2"><strong>Current Difference against original price: </strong></li><br>
-
-                <li class="letterlistequipment2"><strong>Current Difference against original price plus cost of all maintenances: </strong></li><br>
-                <br>
-                     <%if @profit <= 0 %>
-                        <li class="letterlistequipment2"><strong class="letterred">PROFIT: </strong></li><br>
-                     <%else%>
-                         <li class="letterlistequipment2"><strong class="letterblue">PROFIT: </strong></li><br>
-                     <%end%>
-                <li class="letterlistequipment2"><strong class="letterorange">RUNNING TIME: </strong></li>
-                <br><br>
-
-                <li class="letterlistequipment2"><strong>REPORT DATE: </strong></li><br>
-             </ul>
-           </div>
-           <div class="col-sm-6 currentdata">
-              <ul>
-                   <%if @totalprice_less_rentals > 0 %>
-                       <li class="letterlistequipment1"><strong class="letterred"><%=@totalprice_less_rentals%> </strong> $</li><br>
+      <div class="col-sm-3 currentcol">
+        <strong>Current DATA</strong><p>
+        <br>
+       
+      <ul>
+            <li class="letterlistequipment2"><strong>Current Difference against original price: </strong></br>
+                 <t class="letterlistequipment1">&nbsp $</t> 
+                 <%if @totalprice_less_rentals > 0 %>
+                       <strong class="letterred letterlistequipment1"><%=@totalprice_less_rentals%> </strong> <br>
                     <%else%>
-                       <li class="letterlistequipment1"><strong><%=@totalprice_less_rentals%> $</strong></li><br>
-                    <%end%> 
-                   <br>
-                   <br>
+
+                       <strong class="letterlistequipment1"><%=@totalprice_less_rentals%></strong><br>
+                <%end%>
+
+            </li>
+            <br>
+      
+
+            <li class="letterlistequipment2"><strong>Current Difference against original price  plus cost of all maintenance: </strong><br>   
+              <t class="letterlistequipment1">&nbsp $</t>
                    <%if @totalprice_plus_maintenances > 0 %>
-                        <li class="letterlistequipment1"><strong class="letterred"><%=@totalprice_plus_maintenances%> </strong> $</li><br>
+                        <strong class="letterred letterlistequipment1"><%=@totalprice_plus_maintenances%> </strong><br>
                    <%else%>
-                        <li class="letterlistequipment1"><strong><%=@totalprice_plus_maintenances%> $</strong></li><br>         
+                        <strong class="letterlistequipment1" ><%=@totalprice_plus_maintenances%></strong><br>         
                    <%end%>
-                   <br>
-                   <%if @profit <= 0 %>
-                       <li class="letterlistequipment1"><strong class="letterred"><%=@profit%> </strong> $</li><br>
-                   <%else%>
-                       <li class="letterlistequipment1"><strong class="letterblue"><%=@profit%></strong> $</li><br>
-                   <%end%>
+                
+            </li>
+            <br>
+            <br>
+          
+                     <%if @profit <= 0 %>
+                        <li class="letterlistequipment2"><strong class="letterred">PROFIT: </strong>
+                          <t class="letterlistequipment1">&nbsp $</t>
+                          <strong class="letterred letterlistequipment1"><%=@profit%> </strong> <br>
 
-                   <li class="letterlistequipment1"><strong class="letterorange"> <%=@running_time_from%>  </strong> years </li><br>
-                   <br>
+                        </li><br>
+                     <%else%>
+                         <li class="letterlistequipment2"><strong class="letterblue">PROFIT: </strong>
+                          <t class="letterlistequipment1">&nbsp $</t>
+                          <strong class="letterblue letterlistequipment1"><%=@profit%></strong> </br>
+                         </li><br>
+                     <%end%>
 
-                   <li class="letterlistequipment1"><strong><%=@vartime_now.strftime("%m/%d/%y")%> </strong></li><br>
-              </ul>
-              
-           </div>
-           
+
+
+                <li class="letterlistequipment2"><strong class="letterorange">RUNNING TIME: </strong>
+                   
+                      <t class="letterlistequipment1">&nbsp years</t>
+                      <strong class="letterorange letterlistequipment1"> <%=@running_time_from%>  </strong><br>
+                </li>
+                <br>
+                <br>
+                <li class="letterlistequipment2">
+                     <strong >REPORT DATE: </strong>
+                 
+                     <strong class="letterlistequipment1"><%=@vartime_now.strftime("%m/%d/%y")%> </strong>
+                </li><br>
+      </ul><!--Close UL Current data--> 
+           <div class="row">
+                 <button class="btn sendemail js-sendemail">send copy to my email</button><p>
+               <br>
+           </div><!--Close row button-->
           
       </div><!-- 4da column--> 
-      <div class="row">
-                 <button class="btn sendemail js-sendemail">send copy to my email</button>
-           </div><!--Close row button-->
+      
 
     
     </div><!-- 3era row close-->
@@ -187,8 +189,11 @@
 
 
 
-
+<footer>
+  <p>
+    <br>
     <div class="row">
         <%=image_tag("logofooter", class: "imgfooter")%>
     </div><!--Close footer-->
+</footer>
 </div><!-- container -->

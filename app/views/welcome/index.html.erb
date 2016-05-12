@@ -1,12 +1,9 @@
 <div class="container-fluid">
 
-<div class="row">
 
-
-
-<div class="row">
+  <div class="row">
           <%if user_signed_in?%> 
-             <a class="cornerleft1" href="/equipments">List Equipment |</a>       
+             <a class="cornerleft1" href="/equipments"> List Equipment </a>       
              <t class="cornerrigth3"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
               <t/>
               <t class="cornerrigth2">foto</t> 
@@ -25,7 +22,4 @@
      </div>	<!--Close second row-->
 
       
-      <div class="row textlink">
-      
-     </div><!--Close 3er row-->
 </div> <!--Close container-->

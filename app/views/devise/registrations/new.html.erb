@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
       <%=image_tag("logotop", class: "imgtop")%>
     </div> <!--close div cintillo-->
@@ -11,13 +11,13 @@
 
     <div class="field">
       <%= f.label :name %><br />
-      <%= f.name_field :name, autofocus: true %>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
+      <%= f.text_field :name, autofocus: true %>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
     </div>
 
 
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email %>
     </div>
 
 
@@ -36,7 +36,7 @@
 
     <div class="field">
       <%= f.label :image %><br />
-      <%= f.image :image, autocomplete: "off" %>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
+      <%= f.text_field :image, autocomplete: "off" %>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
     </div>
 
     <div class="actions">

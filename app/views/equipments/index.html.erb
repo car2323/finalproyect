@@ -26,30 +26,14 @@
          <button class="btn js-new_equip">add equipment</button>
    </div><!-- 2da row close-->
 
-   <div class="row">
-      
-        <div class="col-sm-2 audiocol">
-          <strong>Audio</strong>
-       </div><!-- 1er column--> 
-
-        <div class="col-sm-2 videocol">
-          <strong>Video</strong>
-       </div><!-- 2da column--> 
-        <div class="col-sm-2 lightcol">
-          <strong>Light</strong>
-       </div><!-- 3era column--> 
-       <div class="col-sm-2 stagingcol">
-          <strong>Staging</strong>
-       </div><!-- 4ta column--> 
-       <div class="col-sm-2 itcomputercol">
-          <strong>IT/Computer</strong>
-       </div><!-- 5ta column--> 
-
-   </div><!-- 3ra row close-->
+  
    <div class="row">
 
+              
 
               <div class="col-sm-2 audiocol">
+                 <strong>Audio</strong><p>
+                 <br>
                 <ul>
                   <%if @array_audio.length > 0%>
                     <% @array_audio.each do |one_audio|%>
@@ -64,9 +48,11 @@
                 </ul>
              </div><!-- 1er column--> 
 
-
+             
 
              <div class="col-sm-2 videocol">
+                    <strong>Video</strong><p>
+              <br>
                 <ul>
                 <%if @array_video.length > 0%>
                    <% @array_video.each do |one_video|%>
@@ -81,8 +67,11 @@
                 </ul>
              </div><!-- 2da column-->
 
+            
 
              <div class="col-sm-2 lightcol">
+              <strong>Light</strong><p>
+              <br>
                   <ul>
                   <%if @array_light.length > 0%>
                     <% @array_light.each do |one_light|%>
@@ -97,8 +86,11 @@
                   </ul>
              </div><!-- 3er column-->
 
+            
 
              <div class="col-sm-2 stagingcol">
+              <strong>Staging</strong><p>
+              <br>
               <ul>
                 <%if @array_staging.length > 0%>
                  <% @array_staging.each do |one_staging|%>
@@ -113,8 +105,11 @@
               </ul>
              </div><!-- 4da column--> 
           
- 
+            
+
              <div class="col-sm-2 itcomputercol">
+                <strong>IT/Computer</strong><p>
+                <br>
                 <ul>
                   <%if @array_itcomputer.length > 0%>
                    <% @array_itcomputer.each do |one_itcomputer|%>
@@ -159,7 +154,11 @@
 
 
     </div><!-- 4ta row close-->
+  <footer>
+    <p>
+    <br>
     <div class="row">
         <%=image_tag("logofooter", class: "imgfooter")%>
     </div><!--Close footer-->
+  </footer>
 </div><!-- container -->

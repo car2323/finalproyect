@@ -1,4 +1,5 @@
 class RentalsController < ApplicationController
+    before_action :authenticate_user!
 	def show
 
         one_equipment = Equipment.find(params[:equipment_id])

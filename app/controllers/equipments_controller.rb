@@ -1,6 +1,8 @@
 class EquipmentsController < ApplicationController
      before_action :authenticate_user!
 	def index
+      
+
 		 equipments = current_user.equipment.all
         if equipments.length < 1
             render "no_eqipments_page"

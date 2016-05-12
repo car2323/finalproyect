@@ -1,4 +1,5 @@
 class MaintenancesController < ApplicationController
+    before_action :authenticate_user!
 	def show
 
         one_equipment = Equipment.find(params[:equipment_id])
@@ -38,7 +39,7 @@ class MaintenancesController < ApplicationController
             :price => params[:price])
             render json: one_mainte, status: 201 
         else
-            render json: { error: "One field is empty for UPDATE" }, status: 501 
+            render json: { error: "One field is empty for dsafadadasdasdUPDATE" }, status: 501 
         end
     end
     def destroy

@@ -4,7 +4,7 @@ function update_mainte(string_url){
       name: $("#name_mainte").val(),
       description: $("#description_mainte").val(),
       date: $("#date_mainte").val(),
-      price: $("#price").val(),
+      price: $("#price_mainte").val(),
       }
   var valid_maintenance = maintenance_validations();
   if(valid_maintenance===true){  

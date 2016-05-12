@@ -12,7 +12,7 @@ $(document).on("page:load ready", function () {
               success: function (equipment){
                  display_update_equip(equipment);
                  $(".updated_equip").on("click",function(){
-                  var vali_var=validations();
+                  var vali_var=equipment_validations();
               if (vali_var === true){
                   $(".modal").modal("hide");
                   var post_data = {

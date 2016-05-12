@@ -4,22 +4,46 @@
 
 .container-fluid{
   background-color: white;
-  width:100%; 
+
+
 }
 .row{
 	background-color: white
 }
+.currentcol{
+	margin: 15px;
+}
+.rentalcol{
+	margin: 15px;
+}
+.maintecol{
+margin: 15px;
+}
 .equipmentcol{
-	margin-left: 25px;
-
+	margin: 15px;
 }
 .datailcol{
 	margin-left: 25px;
 	border-bottom: solid white;
 }
 .audiocol{
-  margin-left: 25px;
-  border-bottom: solid white;	
+  margin: 9px;
+	
+}
+.videocol{
+  margin: 9px;
+	
+}
+.lightcol{
+  margin: 9px;
+	
+}
+.stagingcol{
+  margin: 9px;
+	
+}
+.itcomputercol{
+	margin: 9px;
 }
 .col-sm-1{
 	/*border-style:dashed;*/
@@ -44,32 +68,32 @@
 
 }
 .cornerrigth3{
-	font-size: 11px;
+	font-size: 13px;
     background-color: white;
     float: right;
     margin-right: 35px;
 }
 .cornerrigth2{
-	font-size: 11px;
+	font-size: 13px;
     background-color: white;
     float:right;
 
 }
 .cornerleft1{
-	font-size: 11px;
+	font-size: 13px;
     background-color: white;
 	text-align: left;
 	margin-top: 10px;
 	margin-left: 25px;
 }
 .cornerleft1especial{
-    font-size: 11px;
+    font-size: 13px;
     background-color: white;
 	text-align: left;
 	margin-top: 10px;
 }
 .cornerrigth4{
-	font-size: 11px;
+	font-size: 13px;
     background-color: white;
     float:right;
     margin-right: 35px;
@@ -87,6 +111,7 @@
 	width: 100%;
 }
 .letterlistequipment2{
+	margin-top: 25px;
 	font-size: 13px;
 	text-align: left;
 }
@@ -97,6 +122,7 @@
 .letterlistequipment1{
 	font-size: 15px;
 	text-align: right;
+	float:right;
 }
 
 ul{
@@ -123,9 +149,7 @@ ul{
    margin-top: 15px;	
 }
 .sendemail{
-    float: right;
-    margin-right: 170px;
-    margin-top: 15px;
+   margin-top: 15px;
 }
 .letterred{
   color: red;

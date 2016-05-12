@@ -41,9 +41,9 @@ function display_maintenance(one_maintenance, string_url){
         $(".modal-body").empty();
         $(".modal_title").append("<t class='letterorange'>Update Maintenance Info</t>");
         $(".modal-body").append('<strong> NAME: </strong>  <input id="name_mainte" value="'+ one_maintenance.name + '"><br>');
-        $(".modal-body").append('<strong> DESCRIPTION: </strong>  <input id="name_mainte" value="'+ one_maintenance.description + '"><br>');
+        $(".modal-body").append('<strong> DESCRIPTION: </strong>  <input id="description_mainte" value="'+ one_maintenance.description + '"><br>');
         $(".modal-body").append('<strong> DATE: </strong><input type="date" id="date_mainte" value="'+ one_maintenance.date + '"><br>');
-        $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="price" value="'+ one_maintenance.price + '"><br>');
+        $(".modal-body").append('<strong> PRICE: </strong><input id="price_mainte" value="'+ one_maintenance.price + '"><br>');
         $(".modal-body").append("<br>");
         $(".modal-body").append('<button class="btn updated_mainte letterorange">update</button>');
 

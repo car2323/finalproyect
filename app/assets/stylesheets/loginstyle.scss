@@ -23,8 +23,18 @@
 .loginlinkhome{
 	text-align: center;
 }
-.imgfooter{
+.footer{
+		position:fixed;
+	bottom:0;
+	left:0;
 	width: 100%;
+	height: 50px;
+
+}
+.imgfooter{
+
+	width: 100%;
+	height: 50px;
 
 }
 
