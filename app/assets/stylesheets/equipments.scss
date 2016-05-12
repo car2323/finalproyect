@@ -72,31 +72,48 @@ margin: 15px;
     background-color: white;
     float: right;
     margin-right: 35px;
+    margin-top: 15px;
 }
 .cornerrigth2{
 	font-size: 13px;
     background-color: white;
     float:right;
+    margin-top: 10px;
+
+}
+.cornerrigth{
+	font-size: 13px;
+    background-color: white;
+    float: right;
+    margin-right: 41px;
+    margin-top: 0px;
+    
+    
 
 }
 .cornerleft1{
 	font-size: 13px;
+	float: left;
+	margin-top: 25px;
     background-color: white;
-	text-align: left;
-	margin-top: 10px;
+	
+
 	margin-left: 25px;
 }
 .cornerleft1especial{
     font-size: 13px;
     background-color: white;
+    float: left;
+	margin-top: 25px;
 	text-align: left;
-	margin-top: 10px;
+
 }
 .cornerrigth4{
 	font-size: 13px;
     background-color: white;
     float:right;
     margin-right: 35px;
+    margin-top: 10px;
 }
 .col-sm-4{
 	
@@ -165,4 +182,18 @@ color:rgba(255, 122, 0, 0.91);;
    height: 80px; 
    float:right;
    margin-top: 10px;
+}
+.corneruserimg{
+	font-size: 13px;
+    background-color: white;
+    float:right;
+}
+.imgfooter{
+	width: 100%;
+
+	position:fixed;
+	bottom:0;
+	left:0;
+	width: 100%;
+	height: 50px;
 }

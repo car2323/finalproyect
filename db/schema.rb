@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506224246) do
+ActiveRecord::Schema.define(version: 20160512161326) do
 
   create_table "equipment", force: :cascade do |t|
     t.integer  "user_id"
@@ -66,9 +66,12 @@ ActiveRecord::Schema.define(version: 20160506224246) do
     t.string   "name"
     t.boolean  "admin"
     t.boolean  "active"
-    t.string   "image"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

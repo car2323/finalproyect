@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user_row1=User.create(name: "Carlos1", email: "ccardo29@hotmail.com", password: "carlos123", 
-	admin: true, active: true, image: "stringphotolinkuser1")
+	admin: true, active: true)
 user_row2=User.create(name: "Pedro2", email: "pedro@hotmail.com", password: "pedro123", 
-	admin: true, active: true, image: "stringphotolinkuser2")
+	admin: true, active: true)
 user_row3=User.create(name: "Gustavo3", email: "gustavo@hotmail.com", password: "gustavo123", 
-	admin: false, active: true, image: "stringphotolinkuser3")
+	admin: false, active: true)
 
 #-----------------------------------------------------------------------------------------------
 

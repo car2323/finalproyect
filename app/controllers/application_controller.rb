@@ -4,5 +4,13 @@ class ApplicationController < ActionController::Base
   # def after_sign_in_path_for(resource)
   #        get '/equipments', to: 'equipments#index'
    #end
+
+  before_action :permit_extra_divise_fields, if: :devise_controller?
   protect_from_forgery with: :exception
+  protected
+    def permit_extra_divise_fields
+    	permit_array = devise_parameter_sanitizer.for(:sign_up)
+    	permit_array.push( :image, :name)
+    end
+
 end

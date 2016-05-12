@@ -3,11 +3,12 @@
 
   <div class="row">
           <%if user_signed_in?%> 
-             <a class="cornerleft1" href="/equipments"> List Equipment </a>       
+             <a class="cornerleft1" href="/equipments">List Equipment</a>     
              <t class="cornerrigth3"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
               <t/>
-              <t class="cornerrigth2">foto</t> 
-             <t class="cornerrigth"><strong>User: </strong> <%=current_user.name%></t>
+             <t class="corneruserimg">&nbsp<%= image_tag current_user.image.url(:thumb)%></t><br>
+             <t class="cornerrigth"><strong>User: </strong> <%=current_user.name%>&nbsp</t>
+             
           <%else%>
              <a class="cornerrigth4" href="/users/sign_up"> Sign up</a>
              <a class="cornerrigth2" href="/users/sign_in">Login |</a>
