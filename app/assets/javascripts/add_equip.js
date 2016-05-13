@@ -47,12 +47,12 @@ function display_create_equip(){
   $(".modal_title").empty();
   $(".modal_title").append("<t class='letterblue'>Create new Equipment</t>");
 
-  $(".modal-body").append('<strong> NAME: </strong><input id="name"><br>');
-  $(".modal-body").append('<strong> MODEL: </strong><input id="model"><br>');
-  $(".modal-body").append('<strong> SERIAL: </strong><input id="serial"><br>');
-  $(".modal-body").append('<strong> BRAND: </strong><input id="brand"><br>');
+  $(".modal-body").append('<strong> NAME: </strong><input class="form-control" id="name"><br>');
+  $(".modal-body").append('<strong> MODEL: </strong><input class="form-control" id="model"><br>');
+  $(".modal-body").append('<strong> SERIAL: </strong><input class="form-control" id="serial"><br>');
+  $(".modal-body").append('<strong> BRAND: </strong><input class="form-control" id="brand"><br>');
   $(".modal-body").append('<strong> PURCHARSED DATE: </strong><input id="datepurc" type="date"><br>');
-  $(".modal-body").append('<strong> CATEGORY: </strong>'+`<select id="category_equip">
+  $(".modal-body").append('<strong> CATEGORY: </strong>'+`<select class="form-control" id="category_equip">
                                                              <option value=" ">-Select an option-</option>
                                                              <option value="AUDIO">AUDIO</option>
                                                              <option value="VIDEO">VIDEO</option>
@@ -60,7 +60,7 @@ function display_create_equip(){
                                                              <option value="STAGING">STAGING</option>
                                                              <option value="ITCOMPUTER">IT/COMPUTER</option>
                                                           </select><br>`);
-  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input id="price"><br>');
+  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input class="form-control" id="price"><br>');
   $(".modal-body").append('<button class="btn create_equip letterblue">Create</button>');
   $(".modal").modal("show");
 };

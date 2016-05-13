@@ -38,8 +38,8 @@ function display_rental(one_rental, string_url){
         $(".modal_title").empty();
         $(".modal-body").empty();
         $(".modal_title").append("<t class='letterorange'>Update Rental Info</t>");
-        $(".modal-body").append('<strong> NAME: </strong>  <input id="name_rental" value="'+ one_rental.name + '"><br>');
-        $(".modal-body").append('<strong> DATE: </strong><input type="date" id="date_rental" value="'+ one_rental.date + '"><br>');
+        $(".modal-body").append('<strong> NAME: </strong>  <input class="form-control" id="name_rental" value="'+ one_rental.name + '"><br>');
+        $(".modal-body").append('<strong> DATE: </strong><input class="form-control" type="date" id="date_rental" value="'+ one_rental.date + '"><br>');
         $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="total_price_rental" value="'+ one_rental.total_price + '"><br>');
         $(".modal-body").append("<br>");
         $(".modal-body").append('<button class="btn updated_rental letterorange">update</button>');

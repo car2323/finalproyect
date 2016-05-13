@@ -116,10 +116,10 @@
             <li class="letterlistequipment2"><strong>Current Difference against original price: </strong></br>
                  <t class="letterlistequipment1">&nbsp $</t> 
                  <%if @totalprice_less_rentals > 0 %>
-                       <strong class="letterred letterlistequipment1" id="js-pricelessrental"><%=@totalprice_less_rentals%> </strong> <br>
+                       <strong class="letterred letterlistequipment1 js-pricelessrental"><%=@totalprice_less_rentals%> </strong> <br>
                     <%else%>
 
-                       <strong class="letterlistequipment1" id="js-pricelessrental"><%=@totalprice_less_rentals%></strong><br>
+                       <strong class="letterlistequipment1 js-pricelessrental"><%=@totalprice_less_rentals%></strong><br>
                 <%end%>
 
             </li>
@@ -141,13 +141,13 @@
                      <%if @profit <= 0 %>
                         <li class="letterlistequipment2"><strong class="letterred">PROFIT: </strong>
                           <t class="letterlistequipment1">&nbsp $</t>
-                          <strong class="letterred letterlistequipment1"><%=@profit%> </strong> <br>
+                          <strong class="letterred letterlistequipment1 js-profit"><%=@profit%> </strong> <br>
 
                         </li><br>
                      <%else%>
                          <li class="letterlistequipment2"><strong class="letterblue">PROFIT: </strong>
                           <t class="letterlistequipment1">&nbsp $</t>
-                          <strong class="letterblue letterlistequipment1"><%=@profit%></strong> </br>
+                          <strong class="letterblue letterlistequipment1 js-profit"><%=@profit%></strong> </br>
                          </li><br>
                      <%end%>
 
@@ -156,14 +156,14 @@
                 <li class="letterlistequipment2"><strong class="letterorange">RUNNING TIME: </strong>
                    
                       <t class="letterlistequipment1">&nbsp years</t>
-                      <strong class="letterorange letterlistequipment1"> <%=@running_time_from%>  </strong><br>
+                      <strong class="letterorange letterlistequipment1 js-runningtime"> <%=@running_time_from%>  </strong><br>
                 </li>
                 <br>
                 <br>
                 <li class="letterlistequipment2">
                      <strong >REPORT DATE: </strong>
                  
-                     <strong class="letterlistequipment1"><%=@vartime_now.strftime("%m/%d/%y")%> </strong>
+                     <strong class="letterlistequipment1 js-timenow"><%=@vartime_now.strftime("%m/%d/%y")%> </strong>
                 </li><br>
       </ul><!--Close UL Current data--> 
            <div class="row">

@@ -58,13 +58,13 @@ function display_update_equip(one_equipment){
   $(".modal-body").empty();
   $(".modal_title").empty();
   $(".modal_title").append("<t class='letterorange'>Update Equipment Info</t>");
-  $(".modal-body").append('<strong> NAME: </strong>  <input id="name" value="'+ one_equipment.name + '"><br>');
-  $(".modal-body").append('<strong> MODEL: </strong><input id="model" value="'+ one_equipment.model + '"><br>');
-  $(".modal-body").append('<strong> SERIAL: </strong><input id="serial" value="'+ one_equipment.serial + '"><br>');
-  $(".modal-body").append('<strong> BRAND: </strong><input id="brand" value="'+ one_equipment.brand + '"><br>');
-  $(".modal-body").append('<strong> PURCHARSED DATE: </strong><input id="datepurc" type="date" value="'+ one_equipment.purchased_date + '"><br>');
+  $(".modal-body").append('<strong> NAME: </strong>  <input class="form-control" id="name" value="'+ one_equipment.name + '"><br>');
+  $(".modal-body").append('<strong> MODEL: </strong><input class="form-control" id="model" value="'+ one_equipment.model + '"><br>');
+  $(".modal-body").append('<strong> SERIAL: </strong><input class="form-control" id="serial" value="'+ one_equipment.serial + '"><br>');
+  $(".modal-body").append('<strong> BRAND: </strong><input class="form-control" id="brand" value="'+ one_equipment.brand + '"><br>');
+  $(".modal-body").append('<strong> PURCHARSED DATE: </strong><input class="form-control" id="datepurc" type="date" value="'+ one_equipment.purchased_date + '"><br>');
 
-  $(".modal-body").append('<strong> CATEGORY: </strong>'+`<select id="category_equip">
+  $(".modal-body").append('<strong> CATEGORY: </strong>'+`<select class="form-control" id="category_equip">
                                                              <option value=" ">-Select an option-</option>
                                                              <option value="AUDIO">AUDIO</option>
                                                              <option value="VIDEO">VIDEO</option>
@@ -74,7 +74,7 @@ function display_update_equip(one_equipment){
                                                           </select><br>`);
 
 
-  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input id="price" value="'+ one_equipment.original_price + '"><br>');
+  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input class="form-control" id="price" value="'+ one_equipment.original_price + '"><br>');
   $(".modal-body").append('<button class="btn updated_equip letterorange">update</button>');
   $(".modal").modal("show");
 };
