@@ -28,7 +28,7 @@ function display_rental(one_rental, string_url){
 
   $(".modal_title").append("Choose one option RENTAL"); 
   $(".modal-body").append(' ');
-  $(".modal-body").append('<button class="btn update_rental">update</button>');
+  $(".modal-body").append('<button class="btn btn-primary update_rental">update</button>');
   $(".modal-body").append(' ');
   $(".modal-body").append('<button class="btn btn-danger delete_rental">delete</button>');
   $(".modal-body").append("<br>");
@@ -42,7 +42,7 @@ function display_rental(one_rental, string_url){
         $(".modal-body").append('<strong> DATE: </strong><input class="form-control" type="date" id="date_rental" value="'+ one_rental.date + '"><br>');
         $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="total_price_rental" value="'+ one_rental.total_price + '"><br>');
         $(".modal-body").append("<br>");
-        $(".modal-body").append('<button class="btn updated_rental letterorange">update</button>');
+        $(".modal-body").append('<button class="btn btn-primary updated_rental letterorange">update</button>');
 
         $(".updated_rental").on("click", function () {
                       update_rentals(string_url);

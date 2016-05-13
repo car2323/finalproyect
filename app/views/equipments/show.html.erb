@@ -45,13 +45,13 @@
            <div class="row img_move">
                 <%= form_for [current_user, @one_equipment], url: user_equipment_path(current_user, @one_equipment) do | f | %>
                    <%= f.file_field :image, autocomplete: "off", :class => "letter"%><br>
-                   <%= f.button "save photo", :class => 'btn letter'%>
+                   <%= f.button "save photo", :class => 'btn btn-primary letter'%>
                 <% end %>
               </div>
                
           <div class="row updatedeleteequip">
-               <button class="btn updateequi js-updateequi" data-equip="<%= @one_equipment.id %>">update</button>
-               <button class="btn deleteequi js-deleteequi" data-equip="<%= @one_equipment.id %>">delete</button><p>
+               <button class="btn btn-primary updateequi js-updateequi" data-equip="<%= @one_equipment.id %>">update</button>
+               <button class="btn btn-danger deleteequi js-deleteequi" data-equip="<%= @one_equipment.id %>">delete</button><p>
                <br>
           </div><!--Close row button-->
 
@@ -77,7 +77,7 @@
           </ul>
 
           <div class="row">
-                      <button class="btn addmainte js-addmainte">add new</button><p>
+                      <button class="btn btn-primary addmainte js-addmainte">add new</button><p>
                <br>
 
           </div><!--Close row button-->
@@ -101,7 +101,7 @@
               <%end%>
             </ul>
             <div class="row">
-                <button class="btn addrental js-addrental">add new</button><p>
+                <button class="btn btn-primary addrental js-addrental">add new</button><p>
                <br>
           </div><!--Close row button-->
 
@@ -167,7 +167,7 @@
                 </li><br>
       </ul><!--Close UL Current data--> 
            <div class="row">
-                 <button class="btn sendemail js-createpdf" data-equip="<%= @one_equipment.id %>">create PDF</button><p>
+                 <button class="btn btn-primary sendemail js-createpdf" data-equip="<%= @one_equipment.id %>">create PDF</button><p>
                <br>
            </div><!--Close row button-->
           

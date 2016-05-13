@@ -30,7 +30,7 @@ function display_maintenance(one_maintenance, string_url){
 
   $(".modal_title").append("Choose one option MAINTENANCE"); 
   $(".modal-body").append(' ');
-  $(".modal-body").append('<button class="btn update_mainte">update</button>');
+  $(".modal-body").append('<button class="btn btn-primary update_mainte">update</button>');
   $(".modal-body").append(' ');
   $(".modal-body").append('<button class="btn btn-danger delete_mainte">delete</button>');
   $(".modal-body").append("<br>");
@@ -45,7 +45,7 @@ function display_maintenance(one_maintenance, string_url){
         $(".modal-body").append('<strong> DATE: </strong><input class="form-control" type="date" id="date_mainte" value="'+ one_maintenance.date + '"><br>');
         $(".modal-body").append('<strong> PRICE: </strong><input class="form-control" id="price_mainte" value="'+ one_maintenance.price + '"><br>');
         $(".modal-body").append("<br>");
-        $(".modal-body").append('<button class="btn updated_mainte letterorange">update</button>');
+        $(".modal-body").append('<button class="btn btn-primary updated_mainte letterorange">update</button>');
 
         $(".updated_mainte").on("click", function () {
                       update_mainte(string_url);

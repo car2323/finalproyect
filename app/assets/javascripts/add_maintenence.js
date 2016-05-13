@@ -48,10 +48,10 @@ function display_create_mainte(){
   $(".modal").modal("show");
 	$(".modal-body").append('<strong> NAME: </strong>  <input class="form-control" id="name_mainte"><br>');
   $(".modal-body").append('<strong> DESCRIPTION: </strong>  <input class="form-control" id="description_mainte"><br>');
-	$(".modal-body").append('<strong> DATE: </strong><input class="form-control" type="date" id="date_mainte"><br>');
+	$(".modal-body").append('<strong> DATE: </strong><input type="date" id="date_mainte"><br>');
 	$(".modal-body").append('<strong> PRICE: </strong><input class="form-control" id="price"><br>');
 	$(".modal-body").append("<br>");
-	$(".modal-body").append('<button class="btn create_mainte letterblue">add new</button>');
+	$(".modal-body").append('<button class="btn btn-primary create_mainte letterblue">add new</button>');
 };
 
 
