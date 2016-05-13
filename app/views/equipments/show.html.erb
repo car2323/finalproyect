@@ -32,7 +32,8 @@
              
 
 <!--+++++++++++++++++++++++++++++++++tratando de hacer la foto 12-05-2016++++++++++++++++++++-->
-            <%=image_tag("default_img", class: "equipplaceholder")%>
+
+            <%=image_tag(@one_equipment.image, class: "equipplaceholder")%>
             <li class="letterlistequipment"><strong>NAME: </strong><%=@one_equipment.name%></li>
             <li class="letterlistequipment"><strong>MODEL: </strong><%=@one_equipment.model%></li>
             <li class="letterlistequipment"><strong>SERIAL: </strong><%=@one_equipment.serial%></li>
@@ -43,10 +44,8 @@
 
            <div class="row img_move">
                 <%= form_for [current_user, @one_equipment], url: user_equipment_path(current_user, @one_equipment) do | f | %>
-                   <%= f.file_field :image, autocomplete: "off", class: "findbox" %>
-                   <%= f.button "save photo" %>
-                   
-
+                   <%= f.file_field :image, autocomplete: "off", :class => "letter"%><br>
+                   <%= f.button "save photo", :class => 'btn letter'%>
                 <% end %>
               </div>
                
@@ -117,10 +116,10 @@
             <li class="letterlistequipment2"><strong>Current Difference against original price: </strong></br>
                  <t class="letterlistequipment1">&nbsp $</t> 
                  <%if @totalprice_less_rentals > 0 %>
-                       <strong class="letterred letterlistequipment1"><%=@totalprice_less_rentals%> </strong> <br>
+                       <strong class="letterred letterlistequipment1" id="js-pricelessrental"><%=@totalprice_less_rentals%> </strong> <br>
                     <%else%>
 
-                       <strong class="letterlistequipment1"><%=@totalprice_less_rentals%></strong><br>
+                       <strong class="letterlistequipment1" id="js-pricelessrental"><%=@totalprice_less_rentals%></strong><br>
                 <%end%>
 
             </li>
@@ -130,9 +129,9 @@
             <li class="letterlistequipment2"><strong>Current Difference against original price  plus cost of all maintenance: </strong><br>   
               <t class="letterlistequipment1">&nbsp $</t>
                    <%if @totalprice_plus_maintenances > 0 %>
-                        <strong class="letterred letterlistequipment1"><%=@totalprice_plus_maintenances%> </strong><br>
+                        <strong class="letterred letterlistequipment1 js-priceplusmainte"><%=@totalprice_plus_maintenances%> </strong><br>
                    <%else%>
-                        <strong class="letterlistequipment1" ><%=@totalprice_plus_maintenances%></strong><br>         
+                        <strong class="letterlistequipment1 js-priceplusmainte" ><%=@totalprice_plus_maintenances%></strong><br>         
                    <%end%>
                 
             </li>
@@ -168,7 +167,7 @@
                 </li><br>
       </ul><!--Close UL Current data--> 
            <div class="row">
-                 <button class="btn sendemail js-sendemail">send copy to my email</button><p>
+                 <button class="btn sendemail js-createpdf" data-equip="<%= @one_equipment.id %>">create PDF</button><p>
                <br>
            </div><!--Close row button-->
           

@@ -60,12 +60,28 @@ class EquipmentsController < ApplicationController
         @vartime_now = time_now
 		render "show"
 	end
+
+
     def update
-       @one_equipment = current_user.equipment.find(params[:id])
-        if @one_equipment.update(:image => params[:image])
-            render "/"
+        @one_equipment = current_user.equipment.find(params[:id])
+        if @one_equipment.nil?
+            render "no_eqipments_page"
+            return
+        end
+       if params[:equipment] != nil
+            if params[:equipment][:image] != nil
+                if @one_equipment.update(:image => params[:equipment][:image])
+                    redirect_to "/equipments/"+params[:id]
+                else 
+                    redirect_to "/users/sign_up"
+                end 
+            end 
+        else 
+            redirect_to "/equipments/"+params[:id]
         end
     end
+
+
 
     private
 	def current_data_maintenances(one_equipment,maintenances, rentals)
