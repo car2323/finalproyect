@@ -1,26 +1,59 @@
+
+
+
 <div class="container-fluid">
 
 
+     <div class="top_home_row">
+
+
+                  <%if user_signed_in?%> 
+                     <a class="cornerleft1" href="/equipments">List Equipment</a>     
+                     <t class="cornerrigth3"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                      <t/>
+                     <t class="corneruserimg">&nbsp<%= image_tag current_user.image.url(:thumb)%></t><br>
+                     <t class="cornerrigth"><strong><a href="/users/edit">User: </a></strong> <%=current_user.name%>&nbsp</t>
+                     
+                  <%else%>
+                     <a class="cornerrigth4" href="/users/sign_up"> Sign up</a>
+                     <a class="cornerrigth2" href="/users/sign_in">Login |</a>
+                     
+                  <%end%> 
+
+
+     </div><!-- first row close-->
+
+   <div class="row">
+    <div class="coffee-span-12 column-3">
+      <img src="logotop.jpg" width="100%">
+    </div>
+  </div>
+
   <div class="row">
-          <%if user_signed_in?%> 
-             <a class="cornerleft1" href="/equipments">List Equipment</a>     
-             <t class="cornerrigth3"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-              <t/>
-             <t class="corneruserimg">&nbsp<%= image_tag current_user.image.url(:thumb)%></t><br>
-             <t class="cornerrigth"><strong><a href="/users/edit">User: </a></strong> <%=current_user.name%>&nbsp</t>
-             
-          <%else%>
-             <a class="cornerrigth4" href="/users/sign_up"> Sign up</a>
-             <a class="cornerrigth2" href="/users/sign_in">Login |</a>
-             
-          <%end%>  
+    <div class="coffee-span-12"></div>
+    <div class="coffee-span-12 column-2">
+ 
+        <a href="/users/sign_up"><button type="button" class="btn btn-primary">Get started</button></a>
+    </div>
+  </div>
+<div class="row imgcenter">
+    <div class="coffee-span-12 coffee-push-0 column-1">
+    <!--<blockquote>
+    </blockquote>-->
+      <span class="text-element text-3"><span class="text-text-13"><span class="text-text-1">1</span>&nbsp; <span class="text-text-6">Sign up</span><span class="text-text-3"><br>2</span>  <span class="text-text-9">Upload your equipment info</span><br>
+        <span class="text-text-4"><span class="text-text-5"></span>3</span> <span class="text-text-11">Begin tracking pay back</span></span><br>
+      </span>
+      <span class="text-element text-1 index-col-info0">do you know if you <br>have paid back your <br>rental equipment</span>
 
-   </div><!-- first row close-->
-
-
-      <div class="row picturehome">
-          <img class="imgcenter" src="logohome.png">
-     </div>	<!--Close second row-->
-
-      
+      <span class="text-element text-2 index-col-info">keep track of your <br>rental equipment <br>pay back in three
+        <br> easy steps:<br>
+      </span>
+    </div>
+  </div>
+ 
+  <div class="row">
+    <div class="coffee-span-12 column-3">
+      <img src="logofooter.png" width="100%">
+    </div>
+  </div>
 </div> <!--Close container-->
