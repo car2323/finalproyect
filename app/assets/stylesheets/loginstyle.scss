@@ -205,7 +205,6 @@
 }
 
 
-
 /*===================================================================================================*/
 
 span.text-element.text-1 {
@@ -218,7 +217,8 @@ span.text-element.text-1 {
   text-align: left;
   font-weight: 700;
   font-size: 40px;
-  font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  /*font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;*/
 }
 
 span.text-element.text-2 {
@@ -231,7 +231,8 @@ span.text-element.text-2 {
   text-align: left;
   font-weight: 700;
   font-size: 35px;
-  font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  /*font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;*/
 }
 
 span.text-element.text-3 {
@@ -320,6 +321,7 @@ button[type=button].btn-primary {
     background-color: #000;
   }
 }
+
 
 
 
