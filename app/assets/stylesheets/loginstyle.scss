@@ -210,13 +210,13 @@
 span.text-element.text-1 {
   float: left;
   clear: left;
-  margin: 80px 0 8px 11%;
+  margin: 93px 0 8px 11%;
   padding: 17px 8px 16px 14px;
   width: auto;
   color: #aaadad;
   text-align: left;
-  font-weight: 700;
-  font-size: 40px;
+  font-weight: 600;
+  font-size: 30px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   /*font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;*/
 }
@@ -224,13 +224,13 @@ span.text-element.text-1 {
 span.text-element.text-2 {
   float: left;
   clear: none;
-  margin: 75px 0 8px -4%;
+  margin: 85px 0 8px -4%;
   padding: 12px 0 16px 53px;
   width: auto;
   color: #aaadad;
   text-align: left;
-  font-weight: 700;
-  font-size: 35px;
+  font-weight: 600;
+  font-size: 30px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   /*font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;*/
 }
@@ -240,10 +240,11 @@ span.text-element.text-3 {
   margin-top: 100px;
   margin-right: 6%;
   margin-bottom: 7px;
-  padding: 10px 11px 9px 13px;
+  padding: 0px 11px 9px 13px;
   width: auto;
-  font-weight: 700;
+  font-weight: 600;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+
   /*font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;*/
 }
 
@@ -268,7 +269,7 @@ span.text-element span.text-text-5 {
 }
 
 span.text-element span.text-text-6 {
-  color: #2e68bf;
+  color: #337ab7;
 }
 
 span.text-element span.text-text-9 {
@@ -276,7 +277,7 @@ span.text-element span.text-text-9 {
 }
 
 span.text-element span.text-text-11 {
-  color: #bf0000;
+  color:#337ab7;
 }
 
 span.text-element span.text-text-13 {
@@ -287,7 +288,7 @@ span.text-element span.text-text-13 {
 
 button[type=button].btn-primary {
   float: left;
-     margin: 18px 0px -124px 68%;
+     margin: 18px 0px -124px 65%;
   padding-top: 6px;
   padding-right: 25px;
   padding-left: 25px;
