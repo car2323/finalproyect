@@ -52,6 +52,7 @@ function display_create_mainte(){
 	$(".modal-body").append('<strong> PRICE: </strong><input class="form-control" id="price"><br>');
 	$(".modal-body").append("<br>");
 	$(".modal-body").append('<button class="btn btn-primary create_mainte letterblue">add new</button>');
+  if ( $('#date_mainte')[0].type != 'date' ) $('#date_mainte').datepicker();
 };
 
 

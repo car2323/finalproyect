@@ -12,5 +12,5 @@ class ApplicationController < ActionController::Base
     	permit_array = devise_parameter_sanitizer.for(:sign_up)
     	permit_array.push( :image, :name)
     end
-
+  
 end

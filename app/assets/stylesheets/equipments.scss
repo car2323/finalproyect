@@ -12,17 +12,26 @@
 }
 .currentcol{
 	margin: 15px;
+	height: 360px;
+    overflow-y: auto;
 }
 .rentalcol{
 	margin: 15px;
+	height: 360px;
+    overflow-y: auto;
 }
 .maintecol{
-margin: 15px;
+    margin: 15px;
+    height: 360px;
+    overflow-y: auto;
 }
 .equipmentcol{
 	margin: 15px;
-	
-	background-color: rgba(173, 172, 172, 0.42);
+	margin: 15px;
+    height: 360px;
+    overflow-y: auto;
+	background-color: rgba(173, 172, 172, 0.16);
+
 
 }
 .datailcol{
@@ -31,42 +40,56 @@ margin: 15px;
 }
 .audiocol{
   margin: 9px;
-	
+  height: 315px;
+  overflow-y: auto;
+  background-color: rgba(173, 172, 172, 0.16);
 }
 .videocol{
   margin: 9px;
+  height: 315px;
+  overflow-y: auto;
+  background-color: rgba(173, 172, 172, 0.16);
 	
 }
 .lightcol{
   margin: 9px;
+  height: 315px;
+  overflow-y: auto;
+  background-color: rgba(173, 172, 172, 0.16);
 	
 }
 .stagingcol{
   margin: 9px;
+  height: 315px;
+  overflow-y: auto;
+  background-color: rgba(173, 172, 172, 0.16);
 	
 }
 .itcomputercol{
-	margin: 9px;
+   margin: 9px;
+   height: 315px;
+   overflow-y: auto;
+   background-color: rgba(173, 172, 172, 0.16);
 }
 .col-sm-1{
 	/*border-style:dashed;*/
 	margin-right: 15px;
 
-	background-color: rgba(173, 172, 172, 0.42);
+	background-color: rgba(173, 172, 172, 0.16);
 	text-align: center;
 }
 .col-sm-2{
 	/*border-style:dashed;*/
 	margin-right: 15px;
 
-	background-color: rgba(173, 172, 172, 0.42);
+	background-color: rgba(173, 172, 172, 0.16);
 	text-align: center;
 }
 .col-sm-3{
 	/*border-style:dashed;*/
 	margin-right: 15px;
 
-	background-color: rgba(173, 172, 172, 0.42);
+	background-color: rgba(173, 172, 172, 0.16);
     text-align: center;
 
 }

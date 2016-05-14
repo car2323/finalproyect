@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-
+#config.paths['app/views'] << "app/views/devise"
 
 require "action_view/railtie"
 require "sprockets/railtie"

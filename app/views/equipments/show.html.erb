@@ -24,15 +24,14 @@
    <div class="row">
       <div class="col-sm-3 equipmentcol">
           <strong>Equipment</strong><p>
+
+
+
+             <button class="btn btn-primary updateequi js-updateequi" data-equip="<%= @one_equipment.id %>">update</button>
+             <button class="btn btn-danger deleteequi js-deleteequi" data-equip="<%= @one_equipment.id %>">delete</button><p>
           <br>
           <ul>
-<!--+++++++++++++++++++++++++++++++++tratando de hacer la foto 12-05-2016++++++++++++++++++++-->
-
            
-             
-
-<!--+++++++++++++++++++++++++++++++++tratando de hacer la foto 12-05-2016++++++++++++++++++++-->
-
             <%=image_tag(@one_equipment.image, class: "equipplaceholder")%>
             <li class="letterlistequipment"><strong>NAME: </strong><%=@one_equipment.name%></li>
             <li class="letterlistequipment"><strong>MODEL: </strong><%=@one_equipment.model%></li>
@@ -41,27 +40,32 @@
             <li class="letterlistequipment"><strong>PURCHASED DATE: </strong><%=@one_equipment.purchased_date.strftime("%m/%d/%y")%></li>
             <li class="letterlistequipment"><strong>ORIGINAL PRICE: </strong><%=@one_equipment.original_price%></li>
           </ul>
-
+<!--+++++++++++++++++++++++++++++++++tratando de hacer la foto 12-05-2016++++++++++++++++++++-->
            <div class="row img_move">
                 <%= form_for [current_user, @one_equipment], url: user_equipment_path(current_user, @one_equipment) do | f | %>
                    <%= f.file_field :image, autocomplete: "off", :class => "letter"%><br>
                    <%= f.button "save photo", :class => 'btn btn-primary letter'%>
                 <% end %>
               </div>
-               
+<!--+++++++++++++++++++++++++++++++++tratando de hacer la foto 12-05-2016++++++++++++++++++++-->             
           <div class="row updatedeleteequip">
-               <button class="btn btn-primary updateequi js-updateequi" data-equip="<%= @one_equipment.id %>">update</button>
-               <button class="btn btn-danger deleteequi js-deleteequi" data-equip="<%= @one_equipment.id %>">delete</button><p>
-               <br>
+            
           </div><!--Close row button-->
 
            
       </div><!-- 1er column--> 
 
-
       <div class="col-sm-2 maintecol">
+
+          <!-- <div class="row"> -->
+                      
+               <!--<br>-->
+
+          <!--</div>--><!--Close row button-->
+
          <strong>Maintenance</strong><p>
-         <br>
+         <button class="btn btn-primary addmainte js-addmainte">add new</button><p>
+      
           <ul>
             <%if @maintenances.length > 0%>
                <% @maintenances.each do |one_maintenance|%>
@@ -76,18 +80,15 @@
             <%end%>
           </ul>
 
-          <div class="row">
-                      <button class="btn btn-primary addmainte js-addmainte">add new</button><p>
-               <br>
-
-          </div><!--Close row button-->
+          
 
        </div><!-- 2da column-->
 
 
        <div class="col-sm-2 rentalcol">
            <strong>Rentals</strong><p>
-           <br>
+             <button class="btn btn-primary addrental js-addrental">add new</button><p>
+           
             <ul>
               <%if @rentals.length > 0%>
                  <% @rentals.each do |one_rental|%>
@@ -100,18 +101,18 @@
                  <%end%>
               <%end%>
             </ul>
-            <div class="row">
-                <button class="btn btn-primary addrental js-addrental">add new</button><p>
-               <br>
-          </div><!--Close row button-->
+            <!--<div class="row">-->
+              
+               <!--<br>-->
+          <!--</div>--><!--Close row button-->
 
        </div><!-- 3er column-->
 
 
       <div class="col-sm-3 currentcol">
         <strong>Current DATA</strong><p>
-        <br>
-       
+
+          <button class="btn btn-primary sendemail js-createpdf" data-equip="<%= @one_equipment.id %>">create PDF</button><p>
       <ul>
             <li class="letterlistequipment2"><strong>Current Difference against original price: </strong></br>
                  <t class="letterlistequipment1">&nbsp $</t> 
@@ -123,7 +124,7 @@
                 <%end%>
 
             </li>
-            <br>
+       
       
 
             <li class="letterlistequipment2"><strong>Current Difference against original price  plus cost of all maintenance: </strong><br>   
@@ -135,20 +136,19 @@
                    <%end%>
                 
             </li>
-            <br>
-            <br>
+        
           
                      <%if @profit <= 0 %>
                         <li class="letterlistequipment2"><strong class="letterred">PROFIT: </strong>
                           <t class="letterlistequipment1">&nbsp $</t>
-                          <strong class="letterred letterlistequipment1 js-profit"><%=@profit%> </strong> <br>
+                          <strong class="letterred letterlistequipment1 js-profit"><%=@profit%> </strong>
 
-                        </li><br>
+                        </li>
                      <%else%>
                          <li class="letterlistequipment2"><strong class="letterblue">PROFIT: </strong>
                           <t class="letterlistequipment1">&nbsp $</t>
-                          <strong class="letterblue letterlistequipment1 js-profit"><%=@profit%></strong> </br>
-                         </li><br>
+                          <strong class="letterblue letterlistequipment1 js-profit"><%=@profit%></strong> 
+                         </li>
                      <%end%>
 
 
@@ -158,18 +158,17 @@
                       <t class="letterlistequipment1">&nbsp years</t>
                       <strong class="letterorange letterlistequipment1 js-runningtime"> <%=@running_time_from%>  </strong><br>
                 </li>
-                <br>
-                <br>
+              
                 <li class="letterlistequipment2">
                      <strong >REPORT DATE: </strong>
                  
                      <strong class="letterlistequipment1 js-timenow"><%=@vartime_now.strftime("%m/%d/%y")%> </strong>
-                </li><br>
+                </li>
       </ul><!--Close UL Current data--> 
-           <div class="row">
-                 <button class="btn btn-primary sendemail js-createpdf" data-equip="<%= @one_equipment.id %>">create PDF</button><p>
-               <br>
-           </div><!--Close row button-->
+           <!--<div class="row">-->
+                
+               <!--<br>-->
+           <!--</div>--><!--Close row button-->
           
       </div><!-- 4da column--> 
       

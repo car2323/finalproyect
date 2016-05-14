@@ -46,7 +46,7 @@ function display_maintenance(one_maintenance, string_url){
         $(".modal-body").append('<strong> PRICE: </strong><input class="form-control" id="price_mainte" value="'+ one_maintenance.price + '"><br>');
         $(".modal-body").append("<br>");
         $(".modal-body").append('<button class="btn btn-primary updated_mainte letterorange">update</button>');
-
+        if ( $('#date_mainte')[0].type != 'date' ) $('#date_mainte').datepicker();
         $(".updated_mainte").on("click", function () {
                       update_mainte(string_url);
         });

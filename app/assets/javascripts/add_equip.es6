@@ -61,6 +61,7 @@ function display_create_equip(){
                                                              <option value="ITCOMPUTER">IT/COMPUTER</option>
                                                           </select><br>`);
   $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input class="form-control" id="price"><br>');
-  $(".modal-body").append('<button class="btn create_equip letterblue">Create</button>');
+  $(".modal-body").append('<button class="btn btn-primary create_equip letterblue">Create</button>');
   $(".modal").modal("show");
+   if ( $('#datepurc')[0].type != 'date' ) $('#datepurc').datepicker();
 };

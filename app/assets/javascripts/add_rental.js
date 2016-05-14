@@ -53,6 +53,7 @@ function display_create_rental(){
 	  $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input class="form-control" id="total_price_rental"><br>');
 	  $(".modal-body").append("<br>");
 	  $(".modal-body").append('<button class="btn btn-primary create_rental letterblue">add new</button>');
+   if ( $('#date_rental')[0].type != 'date' ) $('#date_rental').datepicker();
 };
 
 

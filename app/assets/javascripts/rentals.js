@@ -43,7 +43,7 @@ function display_rental(one_rental, string_url){
         $(".modal-body").append('<strong> TOTAL PRICE RENTAL: </strong><input id="total_price_rental" value="'+ one_rental.total_price + '"><br>');
         $(".modal-body").append("<br>");
         $(".modal-body").append('<button class="btn btn-primary updated_rental letterorange">update</button>');
-
+        if ( $('#date_rental')[0].type != 'date' ) $('#date_rental').datepicker();
         $(".updated_rental").on("click", function () {
                       update_rentals(string_url);
         });

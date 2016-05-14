@@ -1,22 +1,19 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  # resources :equipments
+
+  get 'welcome/index'
+  root 'welcome#index' 
+
+
+  devise_for :users, controllers: {registrations: "registrations", sessions: "sessions"}
+
 
   scope "/api" do
     resources :equipments, controller: "equipment_api"
-    #post '/api/equipments/id', to: 'equipment_api#update' 
+  
   end
-  # scope "/rentals" do
-  #   resources :rentals, controller: "rentals"
-  #   #post '/api/equipments/id', to: 'equipment_api#update' 
-  # end
-  
-
-
-  get 'welcome/index'
-  root 'welcome#index'
-  
+ 
+ 
   resources :users do
       resources :equipments
   end

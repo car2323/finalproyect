@@ -76,5 +76,6 @@ function display_update_equip(one_equipment){
 
   $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input class="form-control" id="price" value="'+ one_equipment.original_price + '"><br>');
   $(".modal-body").append('<button class="btn btn-primary updated_equip letterorange">update</button>');
+  if ( $('#datepurc')[0].type != 'date' ) $('#datepurc').datepicker();
   $(".modal").modal("show");
 };
