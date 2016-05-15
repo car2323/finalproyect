@@ -56,8 +56,26 @@ class EquipmentsController < ApplicationController
         @totalprice_less_rentals=current_data_rentals(@one_equipment,@rentals)
         @totalprice_plus_maintenances=current_data_maintenances(@one_equipment,@maintenances, @rentals)
         @profit= profit_calculation(@one_equipment, @totalprice_plus_maintenances)
+
+
         @running_time_from_days = running_time(@one_equipment)
-          @running_time_from = (@running_time_from_days / 365)#.round(2)
+                                
+          
+          # puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+          @running_time_from = (@running_time_from_days/ 365)
+          auxtimefloat=(@running_time_from_days.to_f / 365)
+      
+          auxtimefloat = auxtimefloat.modulo(1)
+          # puts ("antes")
+          # puts (@running_time_from_days)
+          # puts (auxtimefloat)
+          @running_time_from_days = auxtimefloat * 365
+          @running_time_from_days = @running_time_from_days.round
+          # puts ("despues")
+          # puts (@running_time_from_days)
+          # puts (@running_time_from)
+          # puts (auxtimefloat)
+          # puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
         @vartime_now = time_now
 		render "show"
 	end
@@ -113,10 +131,10 @@ class EquipmentsController < ApplicationController
 	end
 	def running_time(one_equipment)
 
-         puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-         puts (one_equipment.purchased_date)
-         puts (one_equipment.purchased_date)
-         puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+         #puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+         #puts (one_equipment.purchased_date)
+         #puts (one_equipment.purchased_date)
+         #puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
         running_time_from = (Date.today.mjd - one_equipment.purchased_date.mjd)#.to_f
 
         return running_time_from
