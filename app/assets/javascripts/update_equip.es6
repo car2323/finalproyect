@@ -73,8 +73,7 @@ function display_update_equip(one_equipment){
                                                              <option value="ITCOMPUTER">IT/COMPUTER</option>
                                                           </select><br>`);
 
-
-  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input class="form-control" id="price" value="'+ one_equipment.original_price + '"><br>');
+  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 44 || event.charCode === 46" class="form-control" id="price" value="'+ one_equipment.original_price + '"><br>');
   $(".modal-body").append('<button class="btn btn-primary updated_equip letterorange">update</button>');
   if ( $('#datepurc')[0].type != 'date' ) $('#datepurc').datepicker();
   $(".modal").modal("show");

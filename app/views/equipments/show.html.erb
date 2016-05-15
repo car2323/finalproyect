@@ -37,9 +37,13 @@
             <li class="letterlistequipment"><strong>MODEL: </strong><%=@one_equipment.model%></li>
             <li class="letterlistequipment"><strong>SERIAL: </strong><%=@one_equipment.serial%></li>
             <li class="letterlistequipment"><strong>BRAND: </strong><%=@one_equipment.brand%></li>
-            <li class="letterlistequipment"><strong>PURCHASED DATE: </strong><%=@one_equipment.purchased_date.strftime("%m/%d/%y")%></li>
+
+            <li class="letterlistequipment"><strong class="datepurcharsed_valid"data-datepur="<%= @one_equipment.purchased_date%>">PURCHASED DATE: </strong><%=@one_equipment.purchased_date%></li>
+
             <li class="letterlistequipment"><strong>ORIGINAL PRICE: </strong><%=@one_equipment.original_price%></li>
           </ul>
+
+
 <!--+++++++++++++++++++++++++++++++++tratando de hacer la foto 12-05-2016++++++++++++++++++++-->
            <div class="row img_move">
                 <%= form_for [current_user, @one_equipment], url: user_equipment_path(current_user, @one_equipment) do | f | %>
@@ -72,7 +76,7 @@
                  <a href="#" class="js-clickmanintenances" data-mainte="<%=  one_maintenance.id%>">
                  <li class="letterlistequipment"><strong>NAME: </strong><%=one_maintenance.name%></li>
                  <li class="letterlistequipment"><strong>DESCRIPTION: </strong><%=one_maintenance.description%> </li>
-                 <li class="letterlistequipment"><strong>DATE: </strong><%=one_maintenance.date.strftime("%m/%d/%y")%></li>
+                 <li class="letterlistequipment"><strong>DATE: </strong><%=one_maintenance.date%></li>
                  <li class="letterlistequipment"><strong>PRICE: </strong><%=one_maintenance.price%></li>
                  <br>
                </a>
@@ -94,7 +98,7 @@
                  <% @rentals.each do |one_rental|%>
                   <a href="#" class="js-clickrentals" data-rental="<%= one_rental.id%>">
                      <li class="letterlistequipment"><strong>NAME: </strong><%=one_rental.name%></li>
-                     <li class="letterlistequipment"><strong>DATE: </strong><%=one_rental.date.strftime("%m/%d/%y")%></li>
+                     <li class="letterlistequipment"><strong>DATE: </strong><%=one_rental.date%></li>
                      <li class="letterlistequipment"><strong>TOTAL PRICE RENTAL: </strong><%=one_rental.total_price%></li>
                      <br>
                   </a>
@@ -155,14 +159,18 @@
 
                 <li class="letterlistequipment2"><strong class="letterorange">RUNNING TIME: </strong>
                    
+                      
+                      <t class="letterlistequipment1">&nbsp days</t>
+                     
+                      <strong class="letterorange letterlistequipment1 js-runningtime"> <%=@running_time_from%><%=@running_time_from_days%>  </strong><br>
                       <t class="letterlistequipment1">&nbsp years</t>
-                      <strong class="letterorange letterlistequipment1 js-runningtime"> <%=@running_time_from%>  </strong><br>
+                      <strong class="letterorange letterlistequipment1 js-runningtime"> <%=@running_time_from%></strong><br>
                 </li>
               
                 <li class="letterlistequipment2">
                      <strong >REPORT DATE: </strong>
                  
-                     <strong class="letterlistequipment1 js-timenow"><%=@vartime_now.strftime("%m/%d/%y")%> </strong>
+                     <strong class="letterlistequipment1 js-timenow"><%=@vartime_now%> </strong>
                 </li>
       </ul><!--Close UL Current data--> 
            <!--<div class="row">-->

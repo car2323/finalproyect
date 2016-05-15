@@ -17,6 +17,9 @@ class MaintenancesController < ApplicationController
 	end
     def create
         one_equipment = Equipment.find(params[:equipment_id])
+        #  puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+        # puts (params[:date])
+        # puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
         one_mainte = one_equipment.maintenances.new(:name => params[:name], 
         	:description => params[:description], :date => params[:date],
             :price => params[:price])

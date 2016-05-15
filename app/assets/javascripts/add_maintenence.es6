@@ -10,7 +10,7 @@ $(document).on("page:load ready", function () {
       var equipment_id_btn = $(".js-updateequi");
       var equipment_id = equipment_id_btn.data("equip");
       display_create_mainte();
-      $(".create_mainte").on("click",function(){
+    $(".create_mainte").on("click",function(){
       var post_data = {
       name: $("#name_mainte").val(),
       description: $("#description_mainte").val(),
@@ -47,9 +47,37 @@ function display_create_mainte(){
   $(".modal_title").append("<t class='letterblue'>Create new Maintenance</t>");
   $(".modal").modal("show");
 	$(".modal-body").append('<strong> NAME: </strong>  <input class="form-control" id="name_mainte"><br>');
-  $(".modal-body").append('<strong> DESCRIPTION: </strong>  <input class="form-control" id="description_mainte"><br>');
-	$(".modal-body").append('<strong> DATE: </strong><input type="date" id="date_mainte"><br>');
-	$(".modal-body").append('<strong> PRICE: </strong><input class="form-control" id="price"><br>');
+
+
+
+  $(".modal-body").append('<strong> DESCRIPTION: </strong>'+`<select class="form-control" id="description_mainteop">
+                                                             <option value=" ">-Select an option-</option>
+                                                             <option value="CLEAN">CLEAN</option>
+                                                             <option value="REPLACE EXTERNAL PART">REPLACE EXTERNAL PART</option>
+                                                             <option value="REPLACE INTERNAL PART">REPLACE INTERNAL PART</option> 
+                                                             <option value="OTHER">OTHER</option>                        
+                                                          </select><br>`);
+
+    
+  $(".modal-body").append('<input class="form-control" id="description_mainte"><br>');
+  $("#description_mainte").hide();
+  $("#description_mainteop").change(function(){
+    if($("#description_mainteop").val()==="OTHER")
+    {
+      $("#description_mainte").val("");
+      $("#description_mainte").prop('disabled', false);
+      $("#description_mainte").show();
+    }
+    else
+    {
+      $("#description_mainte").val($("#description_mainteop").val());
+      $("#description_mainte").prop('disabled', true);
+      $("#description_mainte").show();
+    }
+  })
+      
+	$(".modal-body").append('<strong> DATE: </strong><input class="form-control" type="date (mm-dd-yy)" id="date_mainte"><br>');
+	$(".modal-body").append('<strong> PRICE: </strong><input onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 44 || event.charCode === 46" class="form-control" id="price"><br>');
 	$(".modal-body").append("<br>");
 	$(".modal-body").append('<button class="btn btn-primary create_mainte letterblue">add new</button>');
   if ( $('#date_mainte')[0].type != 'date' ) $('#date_mainte').datepicker();

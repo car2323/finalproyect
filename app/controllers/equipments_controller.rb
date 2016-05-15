@@ -56,7 +56,8 @@ class EquipmentsController < ApplicationController
         @totalprice_less_rentals=current_data_rentals(@one_equipment,@rentals)
         @totalprice_plus_maintenances=current_data_maintenances(@one_equipment,@maintenances, @rentals)
         @profit= profit_calculation(@one_equipment, @totalprice_plus_maintenances)
-        @running_time_from = running_time(@one_equipment)
+        @running_time_from_days = running_time(@one_equipment)
+          @running_time_from = (@running_time_from_days / 365)#.round(2)
         @vartime_now = time_now
 		render "show"
 	end
@@ -111,8 +112,13 @@ class EquipmentsController < ApplicationController
       return profitvar
 	end
 	def running_time(one_equipment)
-        running_time_from = (Date.today - one_equipment.purchased_date).to_f
-        running_time_from = (running_time_from / 365).round(2)
+
+         puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+         puts (one_equipment.purchased_date)
+         puts (one_equipment.purchased_date)
+         puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+        running_time_from = (Date.today.mjd - one_equipment.purchased_date.mjd)#.to_f
+
         return running_time_from
 	end
 	def time_now

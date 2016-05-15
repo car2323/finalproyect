@@ -51,7 +51,7 @@ function display_create_equip(){
   $(".modal-body").append('<strong> MODEL: </strong><input class="form-control" id="model"><br>');
   $(".modal-body").append('<strong> SERIAL: </strong><input class="form-control" id="serial"><br>');
   $(".modal-body").append('<strong> BRAND: </strong><input class="form-control" id="brand"><br>');
-  $(".modal-body").append('<strong> PURCHARSED DATE: </strong><input id="datepurc" type="date"><br>');
+  $(".modal-body").append('<strong> PURCHARSED DATE: </strong><input class="form-control" id="datepurc" type="date"><br>');
   $(".modal-body").append('<strong> CATEGORY: </strong>'+`<select class="form-control" id="category_equip">
                                                              <option value=" ">-Select an option-</option>
                                                              <option value="AUDIO">AUDIO</option>
@@ -60,7 +60,7 @@ function display_create_equip(){
                                                              <option value="STAGING">STAGING</option>
                                                              <option value="ITCOMPUTER">IT/COMPUTER</option>
                                                           </select><br>`);
-  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input class="form-control" id="price"><br>');
+  $(".modal-body").append('<strong> ORIGINAL PRICE: </strong><input onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 44 || event.charCode === 46" class="form-control" id="price"><br>');
   $(".modal-body").append('<button class="btn btn-primary create_equip letterblue">Create</button>');
   $(".modal").modal("show");
    if ( $('#datepurc')[0].type != 'date' ) $('#datepurc').datepicker();
