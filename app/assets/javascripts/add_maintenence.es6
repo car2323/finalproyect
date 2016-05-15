@@ -76,7 +76,7 @@ function display_create_mainte(){
     }
   })
       
-	$(".modal-body").append('<strong> DATE: </strong><input class="form-control" type="date (mm-dd-yy)" id="date_mainte"><br>');
+	$(".modal-body").append('<strong> DATE: </strong><input class="form-control" type="date" id="date_mainte"><br>');
 	$(".modal-body").append('<strong> PRICE: </strong><input onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 44 || event.charCode === 46" class="form-control" id="price"><br>');
 	$(".modal-body").append("<br>");
 	$(".modal-body").append('<button class="btn btn-primary create_mainte letterblue">add new</button>');
