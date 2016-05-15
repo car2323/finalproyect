@@ -46,22 +46,42 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-      <%= f.label :image %><br />
-      <%= f.file_field :image, autocomplete: "off" %> 
-      <br>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
-    </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
+  <div class="field2">
+      <%= f.label :image %> <i>(choose avatar or image for your account)</i><br>
   </div>
-<% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p><br>
 
-<%= link_to "Back", :back %>
+
+
+  <div class="field">
+      <%= f.file_field :image, :class => 'letter', autocomplete: "off" %> <p>
+      <br>   <!--LO AGREGRE YO EL MAY SAT 08 2016-->
+  </div>
+
+
+
+
+    <div class="actions">
+      <%= f.submit "Update", :class => 'btn btn-primary letter' %><p>
+    </div>
+  <% end %>
+
+
+
+  <div class="cancelacount">
+     <br>  
+     <p><h3>Cancel my account</h3></p>
+
+      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'btn btn-danger' %><br></p>
+      
+      <%= link_to "Back", :back%>
+      <br><p><br><br>
+      <br><p><br><br>
+  </div>
+
+
+
     <br>
     <br>
     <div class="row">
