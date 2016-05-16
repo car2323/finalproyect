@@ -5,6 +5,7 @@ class EquipmentsController < ApplicationController
 
 		 equipments = current_user.equipment.all
         if equipments.length < 1
+            @vartime_now = time_now
             render "no_eqipments_page"
             return
         end
