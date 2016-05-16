@@ -3,8 +3,9 @@ function equipment_validations(event){
  //console.log("entro en la funcion de validacion");
   var time_now = $(".js-timenow");
   var time_now_valid = time_now.data("timedatenow");
- //console.log(time_now_valid);
- //console.log(time_now);
+ console.log(time_now_valid);
+ console.log(time_now);
+
  if(time_now_valid < $("#datepurc").val())
   {
   	console.log("entro en el si");
