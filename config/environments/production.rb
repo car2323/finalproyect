@@ -82,7 +82,7 @@ Rails.application.configure do
   s3_credentials: {
     bucket: ('payequipment'),
     access_key_id: ENV['hotmail_usuario_name'],
-    secret_access_key: ENV('hotmail_usuario_password'),    #.fetch
+    secret_access_key: ENV['hotmail_usuario_password'],    #.fetch
     s3_region: ('US Standard'),
              #ENV.fetch
   }
