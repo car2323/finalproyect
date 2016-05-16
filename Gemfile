@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'figaro'
-gem "paperclip", "~> 5.0.0.beta1"
+gem "paperclip"
 gem 'aws-sdk', '~> 2.3'
 # gem 'fog'
 gem 'jspdf-rails'
