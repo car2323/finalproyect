@@ -35,7 +35,7 @@ class EquipmentsController < ApplicationController
             @array_itcomputer.push(equipment)
 		end   
 	  end
-
+        @vartime_now = time_now
         render "index"
 	end
 	def show#current_user.

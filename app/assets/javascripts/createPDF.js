@@ -67,7 +67,7 @@ var imgData = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCARXhpZgAATU
     doc.text(175,160, $(".js-depretaicioninfo").text()+"$");
   
     
-    doc.text(175,190, $(".js-timenow").text()+"$");
+    doc.text(175,190, $(".js-timenow").text());
 
 	  doc.setTextColor(255, 0, 0);
         doc.text(55,110, price+" $");

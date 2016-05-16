@@ -26,7 +26,7 @@ $(document).on("page:load ready", function () {
             data: post_data,    
             success: function(){
               console.log("success");
-              location.reload();
+              window.location.reload();
             }, 
             error: function(error) {
               console.log("FAIL!!!");
