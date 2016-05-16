@@ -51,8 +51,16 @@ class EquipmentsController < ApplicationController
             return
         end
 
-        @maintenances=@one_equipment.maintenances
-        @rentals=@one_equipment.rentals
+        maintenances=@one_equipment.maintenances
+        #"DESC"
+        @maintenances=maintenances.sort {|a,b| b.date <=> a.date}
+
+
+        rentals=@one_equipment.rentals
+        #"DESC"
+        @rentals=rentals.sort {|a,b| b.date <=> a.date}
+
+
         @totalprice_less_rentals=current_data_rentals(@one_equipment,@rentals)
         @totalprice_plus_maintenances=current_data_maintenances(@one_equipment,@maintenances, @rentals)
         @profit= profit_calculation(@one_equipment, @totalprice_plus_maintenances)
