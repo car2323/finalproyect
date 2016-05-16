@@ -80,7 +80,7 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV.fetch('payequipment'),
+    bucket: ENV('payequipment'),
     access_key_id: ENV['hotmail_usuario_name'],
     secret_access_key: ENV('hotmail_usuario_password'),    #.fetch
     s3_region: ENV.fetch('US Standard'),
