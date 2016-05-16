@@ -49,14 +49,14 @@ Rails.application.configure do
 #   :enable_starttls_auto => true
 #  }
 # config/environments/production.rb
-config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV.fetch('payequipment'),
-    access_key_id: ENV['hotmail_usuario_name'],
-    secret_access_key: ENV('hotmail_usuario_password'),    #.fetch
-    s3_region: ENV.fetch('US Standard'),
-  }
-}
+# config.paperclip_defaults = {
+#   storage: :s3,
+#   s3_credentials: {
+#     bucket: ENV.fetch('payequipment'),
+#     access_key_id: ENV['hotmail_usuario_name'],
+#     secret_access_key: ENV('hotmail_usuario_password'),    #.fetch
+#     s3_region: ENV.fetch('US Standard'),
+#   }
+# }
 
 end
