@@ -1,7 +1,7 @@
 $(document).on("page:load ready", function () {
-  
-  $(".js-depretaicioninfo").on("click", function () {
-console.log("hbcwidhbcuewhbckuwehbc");
+  //console.log("hello out side ++++++++++++");
+  $(".js-depretaicioninfo2").on("click", function () {
+  //console.log("hello **********");
       $(".modal-body").empty();
       $(".modal_title").empty();
       $(".modal_title").append("<t class='letterred'>Straight-Line Depreciation Formula</t>");
