@@ -45,9 +45,9 @@ var imgData = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCARXhpZgAATU
   doc.text(10,130,"");
   doc.text(10,140, "Current Difference against original price: ");
   doc.text(10,150, "Current Difference against original price  plus cost of all maintenance: ");
+  doc.text(10,160, "Price after depreciation: ");
  
- 
-  doc.text(10,180, "REPORT DATE: ");
+  doc.text(10,190, "REPORT DATE: ");
   
 
 
@@ -64,18 +64,21 @@ var imgData = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCARXhpZgAATU
 
     doc.text(175,140, $(".js-pricelessrental").text() +"$");
     doc.text(175,150, $(".js-priceplusmainte").text()+"$");
+    doc.text(175,160, $(".js-depretaicioninfo").text()+"$");
   
     
-    doc.text(175,180, $(".js-timenow").text()+"$");
+    doc.text(175,190, $(".js-timenow").text()+"$");
 
 	  doc.setTextColor(255, 0, 0);
         doc.text(55,110, price+" $");
-        doc.text(175,160, $(".js-profit").text()+"$");
-        doc.text(10,160, "PROFIT: ");
-  
+        doc.text(175,170, $(".js-profit").text()+"$");
+        doc.text(10,170, "PROFIT: ");
+        
+
      doc.setTextColor(255, 122, 0)
-        doc.text(10,170, "RUNNING TIME: ");
-        doc.text(175,170, $(".js-runningtime").text()+"$");
+        doc.text(10,180, "RUNNING TIME: ");
+        doc.text(165,180, $(".js-runningtime").text()+" years");
+        doc.text(185,180, $(".js-runningtimedays").text()+"days");
      doc.setTextColor(255, 255, 255);
      doc.setFontSize(30);
         doc.text(58,20,"payEquipment.com");

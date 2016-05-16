@@ -76,6 +76,10 @@ class EquipmentsController < ApplicationController
           # puts (@running_time_from)
           # puts (auxtimefloat)
           # puts ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+     
+       @depretation = straight_linedepreciation(@one_equipment, @running_time_from)
+
+
         @vartime_now = time_now
 		render "show"
 	end
@@ -143,4 +147,63 @@ class EquipmentsController < ApplicationController
 		vartime_now=Date.today
 		return vartime_now
 	end
+  def straight_linedepreciation (one_equipment, running_time)
+    salvage = one_equipment.original_price * 0.012
+    if one_equipment.category =="AUDIO"
+        lifetime = 12;
+        if running_time >= lifetime
+          depretation = salvage
+        else
+          depretation = (one_equipment.original_price -  salvage) / lifetime
+          depretation = running_time * depretation
+          depretation = one_equipment.original_price - depretation
+        end
+                  
+     elsif one_equipment.category =="VIDEO"
+       lifetime = 9;
+        if running_time >= lifetime
+          depretation = salvage
+        else
+          depretation = (one_equipment.original_price -  salvage) / lifetime
+          depretation = running_time * depretation
+          depretation = one_equipment.original_price - depretation
+        end
+     elsif one_equipment.category =="LIGHT"   
+        lifetime = 10;
+        if running_time >= lifetime
+          depretation = salvage
+        else
+          depretation = (one_equipment.original_price -  salvage) / lifetime
+          depretation = running_time * depretation
+          depretation = one_equipment.original_price - depretation
+        end
+     elsif one_equipment.category =="STAGING" 
+        lifetime = 12;
+        if running_time >= lifetime
+          depretation = salvage
+        else
+          depretation = (one_equipment.original_price -  salvage) / lifetime
+          depretation = running_time * depretation
+          depretation = one_equipment.original_price - depretation
+        end
+                             
+    elsif one_equipment.category =="ITCOMPUTER"
+          lifetime = 4;
+        if running_time >= lifetime
+          depretation = salvage
+        else
+          depretation = (one_equipment.original_price -  salvage) / lifetime
+          depretation = running_time * depretation
+          depretation = one_equipment.original_price - depretation
+        end
+    end   
+       return depretation.round(2)
+  end
 end
+
+
+
+
+
+
+

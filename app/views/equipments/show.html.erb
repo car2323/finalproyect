@@ -121,17 +121,17 @@
             <li class="letterlistequipment2"><strong>Current Difference against original price: </strong></br>
                  <t class="letterlistequipment1">&nbsp $</t> 
                  <%if @totalprice_less_rentals > 0 %>
-                       <strong class="letterred letterlistequipment1 js-pricelessrental"><%=@totalprice_less_rentals%> </strong> <br>
+                       <strong class="letterred letterlistequipment1 js-pricelessrental"><%=@totalprice_less_rentals%> </strong>
                     <%else%>
 
-                       <strong class="letterlistequipment1 js-pricelessrental"><%=@totalprice_less_rentals%></strong><br>
+                       <strong class="letterlistequipment1 js-pricelessrental"><%=@totalprice_less_rentals%></strong>
                 <%end%>
 
             </li>
        
       
 
-            <li class="letterlistequipment2"><strong>Current Difference against original price  plus cost of all maintenance: </strong><br>   
+            <li class="letterlistequipment2"><strong>Current Difference against original price  plus cost of all maintenance: </strong> 
               <t class="letterlistequipment1">&nbsp $</t>
                    <%if @totalprice_plus_maintenances > 0 %>
                         <strong class="letterred letterlistequipment1 js-priceplusmainte"><%=@totalprice_plus_maintenances%> </strong><br>
@@ -140,8 +140,14 @@
                    <%end%>
                 
             </li>
-        
-          
+                 
+                  <li class="letterlistequipment2"><strong>Price after depreciation: <a href="#"class="js-depretaicioninfo2">(info)</a></strong>
+                    <t class="letterlistequipment1">&nbsp $</t>
+                  <strong class="letterlistequipment1 js-depretaicioninfo"><%=@depretation%> </strong>
+
+                  </li> 
+
+
                      <%if @profit <= 0 %>
                         <li class="letterlistequipment2"><strong class="letterred">PROFIT: </strong>
                           <t class="letterlistequipment1">&nbsp $</t>
@@ -149,7 +155,7 @@
 
                         </li>
                      <%else%>
-                         <li class="letterlistequipment2"><strong class="letterblue">PROFIT: </strong>
+                          <li class="letterlistequipment2"><strong class="letterblue">PROFIT: </strong>
                           <t class="letterlistequipment1">&nbsp $</t>
                           <strong class="letterblue letterlistequipment1 js-profit"><%=@profit%></strong> 
                          </li>
@@ -162,7 +168,7 @@
                       
                       <t class="letterlistequipment1especial2">&nbsp days</t>
                      
-                      <strong class="letterorange letterlistequipment1especial js-runningtime"><%=@running_time_from_days%>  </strong><br>
+                      <strong class="letterorange letterlistequipment1especial js-runningtimedays"><%=@running_time_from_days%>  </strong><br>
                       <t class="letterlistequipment1especial3">&nbsp years</t>
                       <strong class="letterorange letterlistequipment1especial4 js-runningtime"> <%=@running_time_from%></strong>
                 </li>
