@@ -81,8 +81,8 @@ Rails.application.configure do
   storage: :s3,
   s3_credentials: {
     bucket: ('payequipment'),
-    access_key_id: ENV['hotmail_usuario_name'],
-    secret_access_key: ENV['hotmail_usuario_password']    #.fetch
+    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']    #.fetch
              #ENV.fetch
   }
 }
