@@ -44,18 +44,16 @@ $(document).on("page:load ready", function () {
 function display_create_mainte(){
   $(".modal-body").empty();
   $(".modal_title").empty();
-  $(".modal_title").append("<t class='letterblue'>Create new Maintenance</t>");
+  $(".modal_title").append("<t class='letterblue'>Create new Accessory or Maintenance</t>");
   $(".modal").modal("show");
-  
-  $(".modal-body").append('<strong> DESCRIPTION: </strong>'+`<select class="form-control" id="description_mainteop">
+
+  $(".modal-body").append('<strong> KIND: </strong>'+`<select class="form-control" id="kind_mainteop">
                                                              <option value=" ">-Select an option-</option>
-                                                             <option value="CLEAN">CLEAN</option>
-                                                             <option value="REPLACE EXTERNAL PART">REPLACE EXTERNAL PART</option>
-                                                             <option value="REPLACE INTERNAL PART">REPLACE INTERNAL PART</option> 
-                                                             <option value="OTHER">OTHER</option>                        
+                                                             <option value="ACCESSORY">ACCESSORY</option>
+                                                             <option value="MAINTENANCE">MAINTENANCE</option>                   
                                                           </select><br>`);
 	$(".modal-body").append('<strong> NAME: </strong>  <input class="form-control" id="name_mainte"><br>');
-
+  $("#name_mainte").hide();
 
 
   $(".modal-body").append('<strong> DESCRIPTION: </strong>'+`<select class="form-control" id="description_mainteop">
