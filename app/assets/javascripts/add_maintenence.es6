@@ -52,9 +52,22 @@ function display_create_mainte(){
                                                              <option value="ACCESSORY">ACCESSORY</option>
                                                              <option value="MAINTENANCE">MAINTENANCE</option>                   
                                                           </select><br>`);
-	$(".modal-body").append('<strong> NAME: </strong>  <input class="form-control" id="name_mainte"><br>');
+	$(".modal-body").append('<input class="form-control" id="name_mainte"><br>');
   $("#name_mainte").hide();
-
+  $("#kind_mainteop").change(function(){
+    if($("#kind_mainteop").val()==="ACCESSORY")
+    {
+      $("#name_mainte").val("");
+      $("#name_mainte").prop('disabled', false);
+      $("#name_mainte").show();
+    }
+    else
+    {
+      $("#name_mainte").val($("#description_mainteop").val());
+      $("#name_mainte").prop('disabled', true);
+      $("#name_mainte").show();
+    }
+  })
 
   $(".modal-body").append('<strong> DESCRIPTION: </strong>'+`<select class="form-control" id="description_mainteop">
                                                              <option value=" ">-Select an option-</option>
