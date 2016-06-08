@@ -55,15 +55,15 @@ function display_create_mainte(){
 	$(".modal-body").append('<input class="form-control" id="name_mainte"><br>');
   $("#name_mainte").hide();
   $("#kind_mainteop").change(function(){
-    if($("#kind_mainteop").val()==="ACCESSORY")
+    if ($("#kind_mainteop").val()===" ")
     {
       $("#name_mainte").val("");
-      $("#name_mainte").prop('disabled', false);
-      $("#name_mainte").show();
+      $("#name_mainte").hide();
     }
     else
     {
-      $("#name_mainte").val($("#description_mainteop").val());
+      $("#name_mainte").val(""); 
+      $("#name_mainte").val($("#kind_mainteop").val());
       $("#name_mainte").prop('disabled', true);
       $("#name_mainte").show();
     }
