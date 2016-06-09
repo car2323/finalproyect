@@ -73,7 +73,7 @@ function display_create_mainte(){
                                                              <option value=" ">-Select an option-</option>
                                                              <option value="CLEAN">CLEAN</option>
                                                              <option value="EXTERNAL part/accessory/piece">EXTERNAL part/accessory/piece</option>
-                                                             <option value="INTERNAL part/accessory/piece">EXTERNAL part/accessory/piece</option> 
+                                                             <option value="INTERNAL part/accessory/piece">INTERNAL part/accessory/piece</option> 
                                                              <option value="OTHER">OTHER</option>                        
                                                           </select><br>`);
 
