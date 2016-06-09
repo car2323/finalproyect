@@ -72,8 +72,8 @@ function display_create_mainte(){
   $(".modal-body").append('<strong> DESCRIPTION: </strong>'+`<select class="form-control" id="description_mainteop">
                                                              <option value=" ">-Select an option-</option>
                                                              <option value="CLEAN">CLEAN</option>
-                                                             <option value="EXTERNAL part/accessory/piece">REPLACE EXTERNAL PART</option>
-                                                             <option value="INTERNAL part/accessory/piece">REPLACE INTERNAL PART</option> 
+                                                             <option value="EXTERNAL part/accessory/piece">REPLACE part/accessory/piece</option>
+                                                             <option value="INTERNAL part/accessory/piece">REPLACE part/accessory/piece</option> 
                                                              <option value="OTHER">OTHER</option>                        
                                                           </select><br>`);
 
