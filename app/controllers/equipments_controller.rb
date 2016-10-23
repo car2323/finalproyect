@@ -14,7 +14,7 @@ class EquipmentsController < ApplicationController
         @array_light=[]
         @array_staging=[]
         @array_itcomputer=[]
-        total_investment=0
+        @total_investment=0
 	  equipments.each do |equipment|
 		if equipment.category =="AUDIO"
 		              
@@ -36,7 +36,7 @@ class EquipmentsController < ApplicationController
 
             @array_itcomputer.push(equipment)
 		  end
-      total_investment = total_investment +  equipment.  
+      @total_investment = @total_investment +  equipment.original_price 
 	  end
 
         @vartime_now = time_now
