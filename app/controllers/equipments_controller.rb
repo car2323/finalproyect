@@ -14,6 +14,7 @@ class EquipmentsController < ApplicationController
         @array_light=[]
         @array_staging=[]
         @array_itcomputer=[]
+        totalinvestment=0
 	  equipments.each do |equipment|
 		 if equipment.category =="AUDIO"
 		              
