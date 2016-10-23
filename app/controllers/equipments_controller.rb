@@ -14,29 +14,31 @@ class EquipmentsController < ApplicationController
         @array_light=[]
         @array_staging=[]
         @array_itcomputer=[]
-        totalinvestment=0
+        total_investment=0
 	  equipments.each do |equipment|
-		 if equipment.category =="AUDIO"
+		if equipment.category =="AUDIO"
 		              
 		    @array_audio.push(equipment)           
 		              
-		 elsif equipment.category =="VIDEO"
+		  elsif equipment.category =="VIDEO"
 
 		    @array_video.push(equipment)
 
-		 elsif equipment.category =="LIGHT"   
+		  elsif equipment.category =="LIGHT"   
 
 		    @array_light.push(equipment)
 
-		 elsif equipment.category =="STAGING" 
+		  elsif equipment.category =="STAGING" 
 
 		    @array_staging.push(equipment)
 		          
-		elsif equipment.category =="ITCOMPUTER"
+		  elsif equipment.category =="ITCOMPUTER"
 
             @array_itcomputer.push(equipment)
-		end   
+		  end
+      total_investment = total_investment +  equipment.  
 	  end
+
         @vartime_now = time_now
         render "index"
 	end
