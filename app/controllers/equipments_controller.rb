@@ -15,6 +15,7 @@ class EquipmentsController < ApplicationController
         @array_staging=[]
         @array_itcomputer=[]
         @total_investment=0
+        @total_maintenances=0
 	  equipments.each do |equipment|
 		if equipment.category =="AUDIO"
 		              
@@ -36,6 +37,7 @@ class EquipmentsController < ApplicationController
 
             @array_itcomputer.push(equipment)
 		  end
+      @total_maintenances = @total_maintenances + 
       @total_investment = @total_investment +  equipment.original_price 
 	  end
 
