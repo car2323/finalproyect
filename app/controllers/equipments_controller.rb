@@ -43,7 +43,9 @@ class EquipmentsController < ApplicationController
       equipment.maintenances.each do |one_maintenance|
           @total_maintenances_invest=@total_maintenances_invest+one_maintenance.price
         end
-      @total_investment = @total_investment +  equipment.original_price + @total_maintenances_invest
+       @total_investment = @total_investment +  equipment.original_price
+       @total_investment = @total_investment + @total_maintenances_invest
+       @total_maintenances_invest = 0
 	  end
 
         @vartime_now = time_now
