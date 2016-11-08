@@ -39,7 +39,8 @@ class EquipmentsController < ApplicationController
             @array_itcomputer.push(equipment)
 		  end
 
-
+# to calculate the all investment equipment
+#================================================================
       equipment.maintenances.each do |one_maintenance|
           @total_maintenances_invest=@total_maintenances_invest+one_maintenance.price
         end
@@ -47,7 +48,7 @@ class EquipmentsController < ApplicationController
        @total_investment = @total_investment + @total_maintenances_invest
        @total_maintenances_invest = 0
 	  end
-
+#================================================================
         @vartime_now = time_now
         render "index"
 	end
