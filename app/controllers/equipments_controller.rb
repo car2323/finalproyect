@@ -52,7 +52,7 @@ class EquipmentsController < ApplicationController
        @total_investment = @total_investment +  equipment.original_price
        @total_investment = @total_investment + @total_maintenances_invest
        @total_maintenances_invest = 0
-	  end
+	  
 #================================================================
 
 
@@ -61,9 +61,8 @@ class EquipmentsController < ApplicationController
     equipment.rentals.each do |one_rental|
           @total_rentals=@total_rentals+one_rental.total_price
         end
-
-
-
+    
+     end
 #================================================================
         @vartime_now = time_now
         render "index"
