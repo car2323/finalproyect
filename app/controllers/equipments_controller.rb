@@ -56,15 +56,11 @@ class EquipmentsController < ApplicationController
 #================================================================
 
 
-# to calculate the all investment equipment
+# to calculate the all rentals equipment
 #================================================================
-equipment.rentals.each do |one_rental|
-          @total_rentals=@total_maintenances_invest+one_maintenance.price
+    equipment.rentals.each do |one_rental|
+          @total_rentals=@total_rentals+one_rental.total_price
         end
-       @total_investment = @total_investment +  equipment.original_price
-       @total_investment = @total_investment + @total_maintenances_invest
-       @total_maintenances_invest = 0
-    end
 
 
 
