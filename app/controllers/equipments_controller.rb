@@ -14,8 +14,13 @@ class EquipmentsController < ApplicationController
         @array_light=[]
         @array_staging=[]
         @array_itcomputer=[]
+#================================================================
+#to calculate totals
         @total_investment=0
         @total_maintenances_invest=0
+        @total_rentals=0
+
+#================================================================
     
 	  equipments.each do |equipment|
 		if equipment.category =="AUDIO"
@@ -48,6 +53,21 @@ class EquipmentsController < ApplicationController
        @total_investment = @total_investment + @total_maintenances_invest
        @total_maintenances_invest = 0
 	  end
+#================================================================
+
+
+# to calculate the all investment equipment
+#================================================================
+equipment.rentals.each do |one_rental|
+          @total_rentals=@total_maintenances_invest+one_maintenance.price
+        end
+       @total_investment = @total_investment +  equipment.original_price
+       @total_investment = @total_investment + @total_maintenances_invest
+       @total_maintenances_invest = 0
+    end
+
+
+
 #================================================================
         @vartime_now = time_now
         render "index"
