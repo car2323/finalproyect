@@ -60,7 +60,6 @@ class EquipmentsController < ApplicationController
 #================================================================
     equipment.rentals.each do |one_rental|
           @total_rentals=@total_rentals+one_rental.total_price
-          @total_rentals.round
         end    
      end
 #================================================================
