@@ -32,7 +32,15 @@
          <div class="investmentcol">
                <t class="letterlistequipment1especial1">Total Business Investment : </t><strong><%=@total_investment%></strong>
                <br>
-               <t class="letterlistequipment1especial1">Total Rentals: </t><strong><%=@total_rentals%></strong>
+               <script>
+                   function myFunction(@total_rentals) 
+                   {
+                      
+                      @total_rentals = @total_rentals.toFixed(2)
+                      
+                   }
+               </script>
+               <t class="letterlistequipment1especial1 dollars">Total Rentals: </t><strong><%=@total_rentals%></strong>
                <br>
                <t class="letterlistequipment1especial1">Total PROFIT : </t><strong></strong>
          </div>
