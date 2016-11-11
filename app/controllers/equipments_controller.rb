@@ -50,7 +50,7 @@ class EquipmentsController < ApplicationController
           @total_maintenances_invest=@total_maintenances_invest+one_maintenance.price
         end
        @total_investment = @total_investment +  equipment.original_price
-       @total_investment = @total_investment + @total_maintenances_invest
+       @total_investment = @total_investment.round(2) + @total_maintenances_invest
        @total_maintenances_invest = 0
 	  
 #================================================================
@@ -59,7 +59,7 @@ class EquipmentsController < ApplicationController
 # to calculate the all rentals equipment
 #================================================================
     equipment.rentals.each do |one_rental|
-          @total_rentals=@total_rentals+one_rental.total_price
+          @total_rentals=@total_rentals.round(2)+one_rental.total_price
         end    
      end
 #================================================================
