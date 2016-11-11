@@ -60,8 +60,8 @@ class EquipmentsController < ApplicationController
 #================================================================
     equipment.rentals.each do |one_rental|
           @total_rentals=@total_rentals+one_rental.total_price
-        end
           @total_rentals.round(2)
+        end    
      end
 #================================================================
         @vartime_now = time_now
